@@ -1,0 +1,37 @@
+# Questo file definisce l'intera architettura e come i container interagiscono tra loro.
+
+version: '3.8'
+
+services:
+  # 1. Il Broker MQTT (Il postino)
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: mosquitto_broker
+    ports:
+      - "1883:1883"     # Porta per i dispositivi
+      - "9001:9001"     # Porta per WebSockets (opzionale)
+    volumes:
+      - mosquitto_data:/mosquitto/data
+      - mosquitto_log:/mosquitto/log
+    # Configurazione rapida per accettare connessioni anonime (solo per test locale)
+    command: ["mosquitto", "-c", "/mosquitto-no-auth.conf"] 
+    entrypoint: 
+      - sh
+      - -c
+      - |
+        echo "listener 1883" > /mosquitto-no-auth.conf
+        echo "allow_anonymous true" >> /mosquitto-no-auth.conf
+        /usr/sbin/mosquitto -c /mosquitto-no-auth.conf
+
+  # 2. Il Simulatore Caldaia (Il nostro script)
+  ot-thing-simulator:
+    build: .  # Dice a Docker: "Cerca un Dockerfile nella cartella corrente e costruisci l'immagine da lì".
+    container_name: caldaia_simulator
+    depends_on:  # Dice a Docker: "Cerca di avviare Mosquitto prima di me". 
+    # Nota: questo controlla solo l'ordine di avvio, non se Mosquitto è pronto a ricevere connessioni
+      - mosquitto
+    restart: always
+
+volumes:
+  mosquitto_data:
+  mosquitto_log:

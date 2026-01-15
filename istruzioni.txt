@@ -1,0 +1,13 @@
+Avvia docker
+
+Apri il terminale nella cartella caldaia-simulata.
+
+Digita: docker-compose up --build
+
+Vedrai i log scorrere:
+
+mosquitto_broker si avvierà.
+
+caldaia_simulator si connetterà e inizierà a stampare: Dati inviati: {"water_temperature": 20.5...}.
+
+A questo punto, Home Assistant (configurato per puntare a questo MQTT) vedrà la caldaia "viva" e potrà ricevere i dati (temperatura, pressione).
