@@ -1,0 +1,262 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "core.restore_state",
+  "data": [
+    {
+      "state": {"entity_id":"conversation.home_assistant","state":"unknown","attributes":{"friendly_name":"Home Assistant","supported_features":1},"last_changed":"2026-01-21T08:49:26.283252+00:00","last_reported":"2026-01-21T08:49:26.283252+00:00","last_updated":"2026-01-21T08:49:26.283252+00:00","context":{"id":"01KFFVX3RBK4CN13PBZA3HRQFS","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-21T08:49:29.312518+00:00"
+    },
+    {
+      "state": {"entity_id":"event.backup_automatic_backup","state":"unknown","attributes":{"event_types":["completed","failed","in_progress"],"event_type":null,"friendly_name":"Backup Backup automatico"},"last_changed":"2026-01-21T08:49:26.304484+00:00","last_reported":"2026-01-21T08:49:26.304484+00:00","last_updated":"2026-01-21T08:49:26.304484+00:00","context":{"id":"01KFFVX3S0F765JPEWVYZHFHB7","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "last_event_type": null,
+        "last_event_attributes": null
+      },
+      "last_seen": "2026-01-21T08:49:29.312518+00:00"
+    },
+    {
+      "state": {"entity_id":"person.mary","state":"unknown","attributes":{"editable":true,"id":"mary","device_trackers":[],"source":"person.mary","user_id":"f9485dc8fc9f428a93c56b81840cbf18","friendly_name":"Mary"},"last_changed":"2026-01-21T08:49:26.641133+00:00","last_reported":"2026-01-21T08:49:26.641133+00:00","last_updated":"2026-01-21T08:49:26.641133+00:00","context":{"id":"01KFFVX43HGEZYYV1BHF10W6N1","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-21T08:49:29.312518+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.caldaia_fiamma_reale","state":"unknown","attributes":{"icon":"mdi:fire","friendly_name":"Caldaia Fiamma"},"last_changed":"2026-01-21T08:49:26.924839+00:00","last_reported":"2026-01-21T08:49:26.924839+00:00","last_updated":"2026-01-21T08:49:26.924839+00:00","context":{"id":"01KFFVX4CCM92960FEX35R6WQJ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-21T08:49:29.312518+00:00"
+    },
+    {
+      "state": {"entity_id":"tts.google_translate_en_com","state":"unknown","attributes":{"friendly_name":"Google Translate en com"},"last_changed":"2026-01-21T08:49:27.371729+00:00","last_reported":"2026-01-21T08:49:27.371729+00:00","last_updated":"2026-01-21T08:49:27.371729+00:00","context":{"id":"01KFFVX4TBAQWG9WJSWVQWR1J8","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-21T08:49:29.312518+00:00"
+    },
+    {
+      "state": {"entity_id":"number.caldaia_setpoint","state":"40.0","attributes":{"min":30.0,"max":80.0,"step":0.5,"mode":"auto","unit_of_measurement":"°C","friendly_name":"Caldaia Setpoint"},"last_changed":"2026-01-21T08:49:28.263273+00:00","last_reported":"2026-01-21T08:49:28.263273+00:00","last_updated":"2026-01-21T08:49:28.263273+00:00","context":{"id":"01KFFVX5P783JF34VK8FPY3EFH","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_max_value": 80.0,
+        "native_min_value": 30.0,
+        "native_step": 0.5,
+        "native_unit_of_measurement": "°C",
+        "native_value": 40.0
+      },
+      "last_seen": "2026-01-21T08:49:29.312518+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.caldaia_stato_guasto","state":"unknown","attributes":{"device_class":"problem","friendly_name":"Caldaia Stato Guasto"},"last_changed":"2026-01-21T08:49:27.395144+00:00","last_reported":"2026-01-21T08:49:27.395144+00:00","last_updated":"2026-01-21T08:49:27.395144+00:00","context":{"id":"01KFFVX4V3W5ADR00RJ0QNQBWC","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-21T08:49:29.312518+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.caldaia_t_mandata","state":"39.0","attributes":{"unit_of_measurement":"°C","friendly_name":"Temperatura acqua"},"last_changed":"2026-01-21T08:49:29.285856+00:00","last_reported":"2026-01-21T08:49:29.285856+00:00","last_updated":"2026-01-21T08:49:29.285856+00:00","context":{"id":"01KFFVX6P5CKSSB551D76QVN0B","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "39.0",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-21T08:49:29.312518+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.caldaia_t_ritorno","state":"29.0","attributes":{"unit_of_measurement":"°C","friendly_name":"Caldaia T-Ritorno"},"last_changed":"2026-01-21T08:49:29.285819+00:00","last_reported":"2026-01-21T08:49:29.285819+00:00","last_updated":"2026-01-21T08:49:29.285819+00:00","context":{"id":"01KFFVX6P5YYGCCWRG267PXM00","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "29.0",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-21T08:49:29.312518+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.caldaia_pressione","state":"1.51","attributes":{"unit_of_measurement":"bar","friendly_name":"Caldaia Pressione"},"last_changed":"2026-01-21T08:49:29.285867+00:00","last_reported":"2026-01-21T08:49:29.285867+00:00","last_updated":"2026-01-21T08:49:29.285867+00:00","context":{"id":"01KFFVX6P5EJWJQV0BYA55XG8K","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "1.51",
+        "native_unit_of_measurement": "bar"
+      },
+      "last_seen": "2026-01-21T08:49:29.312518+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.caldaia_codice_errore","state":"0","attributes":{"icon":"mdi:alert-circle","friendly_name":"Caldaia Codice Errore"},"last_changed":"2026-01-21T08:49:28.263117+00:00","last_reported":"2026-01-21T08:49:28.263117+00:00","last_updated":"2026-01-21T08:49:28.263117+00:00","context":{"id":"01KFFVX5P7M81NEV0SQDN0KBNS","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2026-01-21T08:49:29.312518+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.test_raw_status","state":"8","attributes":{"friendly_name":"TEST RAW STATUS"},"last_changed":"2026-01-21T08:49:28.263329+00:00","last_reported":"2026-01-21T08:49:28.263329+00:00","last_updated":"2026-01-21T08:49:28.263329+00:00","context":{"id":"01KFFVX5P7EF3A681XPSD7H4S6","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "8",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2026-01-21T08:49:29.312518+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.simulazione_rottura_tubo","state":"off","attributes":{"assumed_state":true,"icon":"mdi:wrench","friendly_name":"Simulazione Rottura Tubo"},"last_changed":"2026-01-21T08:49:27.395389+00:00","last_reported":"2026-01-21T08:49:27.395389+00:00","last_updated":"2026-01-21T08:49:27.395389+00:00","context":{"id":"01KFFVX4V3BH3Y94VV3VJT2DQ2","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-21T08:49:29.312518+00:00"
+    },
+    {
+      "state": {"entity_id":"conversation.extended_openai_conversation","state":"2026-01-21T08:23:41.369477+00:00","attributes":{"friendly_name":"Extended OpenAI Conversation","supported_features":1},"last_changed":"2026-01-21T08:49:29.312107+00:00","last_reported":"2026-01-21T08:49:29.312107+00:00","last_updated":"2026-01-21T08:49:29.312107+00:00","context":{"id":"01KFFVX6Q0TNRSZ0ZHHWX5WGW0","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-21T08:49:29.312518+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.caldaia_fiamma","state":"off","attributes":{"icon":"mdi:fire","friendly_name":"Caldaia Fiamma"},"last_changed":"2026-01-20T16:46:12.924572+00:00","last_reported":"2026-01-20T16:46:12.924572+00:00","last_updated":"2026-01-20T16:46:12.924572+00:00","context":{"id":"01KFE4SCXW15J0R6MG4MCTFAHH","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-20T16:46:29.781322+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.test_raw_status","state":"unknown","attributes":{"friendly_name":"TEST RAW STATUS"},"last_changed":"2026-01-20T15:35:13.859548+00:00","last_reported":"2026-01-20T15:35:13.859548+00:00","last_updated":"2026-01-20T15:35:13.859548+00:00","context":{"id":"01KFE0QDP3EPFNHMEQ285FZARG","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-20T15:36:10.563590+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.sensore_x","state":"unknown","attributes":{"friendly_name":"SENSORE X"},"last_changed":"2026-01-20T15:30:30.695343+00:00","last_reported":"2026-01-20T15:30:30.695343+00:00","last_updated":"2026-01-20T15:30:30.695343+00:00","context":{"id":"01KFE0ES576C20QJTTG81XA9NQ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-20T15:31:44.739722+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.sensore_x_guasto","state":"unknown","attributes":{"device_class":"problem","friendly_name":"SENSORE X GUASTO"},"last_changed":"2026-01-20T15:30:30.695378+00:00","last_reported":"2026-01-20T15:30:30.695378+00:00","last_updated":"2026-01-20T15:30:30.695378+00:00","context":{"id":"01KFE0ES57VVRV80NCTNEM6K19","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-20T15:31:44.739722+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.simulazione_rompi_tubo_pressione","state":"off","attributes":{"assumed_state":true,"icon":"mdi:wrench-clock","friendly_name":"Simulazione: Rompi Tubo Pressione"},"last_changed":"2026-01-16T11:42:40.522318+00:00","last_reported":"2026-01-16T11:42:40.522318+00:00","last_updated":"2026-01-16T11:42:40.522318+00:00","context":{"id":"01KF39TQCAD3ZKX1R2K29J6HHR","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-16T11:49:38.917303+00:00"
+    },
+    {
+      "state": {"entity_id":"number.caldaia_setpoint_id_1","state":"40.0","attributes":{"min":30.0,"max":80.0,"step":0.5,"mode":"auto","unit_of_measurement":"°C","friendly_name":"Caldaia - Setpoint (ID 1)"},"last_changed":"2026-01-16T11:42:41.912310+00:00","last_reported":"2026-01-16T11:42:41.912310+00:00","last_updated":"2026-01-16T11:42:41.912310+00:00","context":{"id":"01KF39TRQR5F3M15SR2RBB8GNS","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_max_value": 80.0,
+        "native_min_value": 30.0,
+        "native_step": 0.5,
+        "native_unit_of_measurement": "°C",
+        "native_value": 40.0
+      },
+      "last_seen": "2026-01-16T11:49:38.917303+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.caldaia_t_mandata_id_25","state":"38.4","attributes":{"unit_of_measurement":"°C","friendly_name":"Caldaia - T-Mandata (ID 25)"},"last_changed":"2026-01-16T11:49:37.957897+00:00","last_reported":"2026-01-16T11:49:37.957897+00:00","last_updated":"2026-01-16T11:49:37.957897+00:00","context":{"id":"01KF3A7F15PVTQQB2YKP1AQAJV","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "38.4",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-16T11:49:38.917303+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.caldaia_t_ritorno_id_28","state":"5.6","attributes":{"unit_of_measurement":"°C","friendly_name":"Caldaia - T-Ritorno (ID 28)"},"last_changed":"2026-01-16T11:49:37.958017+00:00","last_reported":"2026-01-16T11:49:37.958017+00:00","last_updated":"2026-01-16T11:49:37.958017+00:00","context":{"id":"01KF3A7F16GVT8KMAHM5Z37RHF","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "5.6",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-16T11:49:38.917303+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.caldaia_pressione_id_9","state":"1.45","attributes":{"unit_of_measurement":"bar","friendly_name":"Caldaia - Pressione (ID 9)"},"last_changed":"2026-01-16T11:49:37.957989+00:00","last_reported":"2026-01-16T11:49:37.957989+00:00","last_updated":"2026-01-16T11:49:37.957989+00:00","context":{"id":"01KF3A7F156DCQD13CYXRZJST5","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "1.45",
+        "native_unit_of_measurement": "bar"
+      },
+      "last_seen": "2026-01-16T11:49:38.917303+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.caldaia_modulazione_id_17","state":"100.0","attributes":{"unit_of_measurement":"%","friendly_name":"Caldaia - Modulazione (ID 17)"},"last_changed":"2026-01-16T11:42:41.912162+00:00","last_reported":"2026-01-16T11:42:41.912162+00:00","last_updated":"2026-01-16T11:42:41.912162+00:00","context":{"id":"01KF39TRQRY0V3ENJGA3570ESG","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "100.0",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-16T11:49:38.917303+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.caldaia_codice_errore_oem","state":"","attributes":{"icon":"mdi:alert-circle","friendly_name":"Caldaia - Codice Errore (OEM)"},"last_changed":"2026-01-16T11:42:41.912028+00:00","last_reported":"2026-01-16T11:42:41.912028+00:00","last_updated":"2026-01-16T11:42:41.912028+00:00","context":{"id":"01KF39TRQRNTNZ05BKFVQ9ZWKE","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2026-01-16T11:49:38.917303+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.caldaia_fiamma_status_bit","state":"unknown","attributes":{"friendly_name":"Caldaia - Fiamma (Status Bit)"},"last_changed":"2026-01-16T11:42:40.522564+00:00","last_reported":"2026-01-16T11:42:40.522564+00:00","last_updated":"2026-01-16T11:42:40.522564+00:00","context":{"id":"01KF39TQCA21TXYSW8VACEV9FR","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-16T11:49:38.917303+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.caldaia_stato_di_errore","state":"unknown","attributes":{"device_class":"problem","friendly_name":"Caldaia - Stato di Errore"},"last_changed":"2026-01-16T11:42:40.522580+00:00","last_reported":"2026-01-16T11:42:40.522580+00:00","last_updated":"2026-01-16T11:42:40.522580+00:00","context":{"id":"01KF39TQCAHCFDDS41APDV41S8","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-16T11:49:38.917303+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.caldaia_t_flow_id_25","state":"38.0","attributes":{"unit_of_measurement":"°C","friendly_name":"Caldaia - T-Flow (ID 25)"},"last_changed":"2026-01-16T11:41:48.192173+00:00","last_reported":"2026-01-16T11:41:48.192173+00:00","last_updated":"2026-01-16T11:41:48.192173+00:00","context":{"id":"01KF39S490REG9T4Y81P4YCM3R","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "38.0",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-16T11:41:49.500553+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.caldaia_t_return_id_28","state":"17.2","attributes":{"unit_of_measurement":"°C","friendly_name":"Caldaia - T-Return (ID 28)"},"last_changed":"2026-01-16T11:41:48.192895+00:00","last_reported":"2026-01-16T11:41:48.192895+00:00","last_updated":"2026-01-16T11:41:48.192895+00:00","context":{"id":"01KF39S4908621K0JHT7CJX9QD","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "17.2",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-16T11:41:49.500553+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.caldaia_temperatura_acqua","state":"unavailable","attributes":{"unit_of_measurement":"°C","friendly_name":"Caldaia - Temperatura acqua"},"last_changed":"2026-01-16T11:05:51.256349+00:00","last_reported":"2026-01-16T11:05:51.256349+00:00","last_updated":"2026-01-16T11:05:51.256349+00:00","context":{"id":"01KF37Q9WRMFFAMMN80ZHXQRKQ","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "40.0",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-16T11:30:16.604757+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.caldaia_temperatura_ritorno","state":"unavailable","attributes":{"unit_of_measurement":"°C","friendly_name":"Caldaia - Temperatura ritorno"},"last_changed":"2026-01-16T11:05:51.256427+00:00","last_reported":"2026-01-16T11:05:51.256427+00:00","last_updated":"2026-01-16T11:05:51.256427+00:00","context":{"id":"01KF37Q9WRPF0A95G51J5NBE54","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "30.0",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-16T11:30:16.604757+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.caldaia_modulazione","state":"unavailable","attributes":{"unit_of_measurement":"%","friendly_name":"Caldaia - Modulazione"},"last_changed":"2026-01-16T11:05:51.256494+00:00","last_reported":"2026-01-16T11:05:51.256494+00:00","last_updated":"2026-01-16T11:05:51.256494+00:00","context":{"id":"01KF37Q9WRRR5HRKGKPFH2G2F8","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-16T11:30:16.604757+00:00"
+    },
+    {
+      "state": {"entity_id":"number.imposta_temperatura_setpoint","state":"30","attributes":{"min":30.0,"max":80.0,"step":0.5,"mode":"auto","unit_of_measurement":"°C","assumed_state":true,"icon":"mdi:thermostat","friendly_name":"Imposta Temperatura (Setpoint)"},"last_changed":"2026-01-15T14:26:05.777498+00:00","last_reported":"2026-01-15T14:26:05.777498+00:00","last_updated":"2026-01-15T14:26:05.777498+00:00","context":{"id":"01KF10S7THV2YHK4TCNKMWGRS5","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_max_value": 80.0,
+        "native_min_value": 30.0,
+        "native_step": 0.5,
+        "native_unit_of_measurement": "°C",
+        "native_value": 30
+      },
+      "last_seen": "2026-01-15T14:30:29.276580+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperatura_caldaia_simulata","state":"38.4","attributes":{"unit_of_measurement":"°C","icon":"mdi:thermometer","friendly_name":"Temperatura Caldaia (Simulata)"},"last_changed":"2026-01-15T14:30:28.979374+00:00","last_reported":"2026-01-15T14:30:28.979374+00:00","last_updated":"2026-01-15T14:30:28.979374+00:00","context":{"id":"01KF1118VKW28EG7CJ81S4R7A0","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "38.4",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-15T14:30:29.276580+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.pressione_acqua","state":"1.57","attributes":{"unit_of_measurement":"bar","icon":"mdi:gauge","friendly_name":"Pressione Acqua"},"last_changed":"2026-01-15T14:30:28.979206+00:00","last_reported":"2026-01-15T14:30:28.979206+00:00","last_updated":"2026-01-15T14:30:28.979206+00:00","context":{"id":"01KF1118VKVE5VKRY1ZG4KRXS5","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "1.57",
+        "native_unit_of_measurement": "bar"
+      },
+      "last_seen": "2026-01-15T14:30:29.276580+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.stato_fiamma","state":"Spenta","attributes":{"icon":"mdi:fire","friendly_name":"Stato Fiamma"},"last_changed":"2026-01-15T14:26:07.432710+00:00","last_reported":"2026-01-15T14:26:07.432710+00:00","last_updated":"2026-01-15T14:26:07.432710+00:00","context":{"id":"01KF10S9E8NKCCQDPFFM2QTVZ4","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "Spenta",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2026-01-15T14:30:29.276580+00:00"
+    }
+  ]
+}

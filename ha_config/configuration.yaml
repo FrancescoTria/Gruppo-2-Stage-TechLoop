@@ -1,0 +1,77 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+# CONFIGURAZIONE MQTT
+mqtt:
+  sensor:
+    - name: "Temperatura acqua"
+      state_topic: "opentherm-gateway/status"
+      unit_of_measurement: "°C"
+      value_template: "{{ value_json.ID_25 }}"
+      unique_id: "caldaia_t_mandata_v2"
+
+    - name: "Caldaia T-Ritorno"
+      state_topic: "opentherm-gateway/status"
+      unit_of_measurement: "°C"
+      value_template: "{{ value_json.ID_28 }}"
+      unique_id: "caldaia_t_ritorno_v2"
+
+    - name: "Caldaia Pressione"
+      state_topic: "opentherm-gateway/status"
+      unit_of_measurement: "bar"
+      value_template: "{{ value_json.ID_9 }}"
+      unique_id: "caldaia_pressione_v2"
+
+    - name: "Caldaia Codice Errore"
+      state_topic: "opentherm-gateway/status"
+      value_template: "{{ value_json.ID_5 }}"
+      unique_id: "caldaia_errore_v2"
+      icon: mdi:alert-circle
+
+    # ECCOLO QUI NEL POSTO GIUSTO (Sotto sensor, non binary_sensor)
+    - name: "TEST RAW STATUS"
+      state_topic: "opentherm-gateway/status"
+      value_template: "{{ value_json.ID_0.slave_status }}"
+      unique_id: "test_raw_123"
+
+  binary_sensor:
+  #   - name: "Caldaia Fiamma"
+  #     state_topic: "opentherm-gateway/status"
+  #     value_template: "{{ value_json.ID_0.slave_status | int | bitwise_and(8) > 0 }}"
+  #     unique_id: "caldaia_fiamma_v2"
+
+    - name: "Caldaia Stato Guasto"
+      state_topic: "opentherm-gateway/status"
+      value_template: "{{ value_json.ID_0.slave_status | int | bitwise_and(1) > 0 }}"
+      device_class: problem
+      unique_id: "caldaia_guasto_v2"
+      
+  number:
+    - name: "Caldaia Setpoint"
+      command_topic: "opentherm-gateway/setpoint/set"
+      state_topic: "opentherm-gateway/status"
+      value_template: "{{ value_json.ID_1 }}"
+      min: 30
+      max: 80
+      step: 0.5
+      unit_of_measurement: "°C"
+      optimistic: false
+      unique_id: "caldaia_setpoint_v2"
+
+  switch:
+    - name: "Simulazione Rottura Tubo"
+      command_topic: "opentherm-gateway/fault/set"
+      payload_on: "ON"
+      payload_off: "OFF"
+      state_on: "ON"
+      state_off: "OFF"
+      icon: mdi:wrench
+      unique_id: "caldaia_sim_fault_v2"

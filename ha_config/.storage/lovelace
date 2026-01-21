@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "path": "default_view",
+          "title": "Home",
+          "cards": [
+            {
+              "type": "gauge",
+              "entity": "sensor.caldaia_t_mandata"
+            },
+            {
+              "graph": "line",
+              "type": "sensor",
+              "entity": "sensor.caldaia_pressione",
+              "detail": 1
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "switch.simulazione_rottura_tubo"
+                },
+                {
+                  "entity": "sensor.caldaia_codice_errore"
+                }
+              ]
+            }
+          ],
+          "badges": [
+            {
+              "type": "entity",
+              "entity": "binary_sensor.caldaia_fiamma_reale"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -32,6 +32,35 @@ services:
       - mosquitto
     restart: always
 
+    # ... (i tuoi servizi mosquitto e ot-thing-simulator restano uguali)
+
+  # 3. LiteLLM Proxy (Il Gateway)
+  litellm:
+    image: ghcr.io/berriai/litellm:main-latest
+    container_name: litellm_proxy
+    ports:
+      - "4000:4000" # Porta esposta per Home Assistant
+    volumes:
+      - ./litellm_config.yaml:/app/config.yaml # Montiamo il file creato sopra
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY} # La chiave API (la inseriremo in un file .env)
+    command: [ "--config", "/app/config.yaml", "--port", "4000", "--detailed_debug" ]
+    restart: always
+
+  # 4. Home Assistant (Il Cervello)
+  homeassistant:
+    image: lscr.io/linuxserver/homeassistant:latest
+    container_name: homeassistant
+    ports:                
+      - "8123:8123"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Rome
+    volumes:
+      - ./ha_config:/config 
+    restart: always
+
 volumes:
   mosquitto_data:
   mosquitto_log:

@@ -1,0 +1,62 @@
+query_image:
+  fields:
+    config_entry:
+      required: true
+      selector:
+        config_entry:
+          integration: extended_openai_conversation
+    model:
+      example: gpt-4.1-mini
+      selector:
+        text:
+    prompt:
+      example: "What’s in this image?"
+      required: true
+      selector:
+        text:
+          multiline: true
+    images:
+      example: '{"url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg"}'
+      required: true
+      default: []
+      selector:
+        object:
+    max_tokens:
+      example: 300
+      default: 300
+      selector:
+        number:
+          min: 1
+          mode: box
+change_config:
+  fields:
+    config_entry:
+      required: true
+      selector:
+        config_entry:
+          integration: extended_openai_conversation
+    api_key:
+      selector:
+        text:
+          type: password
+    base_url:
+      example: https://api.openai.com/v1
+      selector:
+        text:
+    api_version:
+      selector:
+        text:
+    organization:
+      selector:
+        text:
+    skip_authentication:
+      selector:
+        boolean:
+    api_provider:
+      example: openai
+      selector:
+        select:
+          options:
+            - openai
+            - azure
+          mode: dropdown

@@ -1,0 +1,5 @@
+model_list:
+  - model_name: gpt-3.5-turbo  # Il nome che useremo in Home Assistant
+    litellm_params:
+      model: groq/llama-3.3-70b-versatile
+      api_key: os.environ/GROQ_API_KEY # Prende la chiave dalle variabili d'ambiente

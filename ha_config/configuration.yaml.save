@@ -1,0 +1,38 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+mqtt:
+  sensor:
+    - name: "Temperatura Caldaia (Simulata)"
+      state_topic: "opentherm-gateway/status"
+      value_template: "{{ value_json.water_temperature }}"
+      unit_of_measurement: "°C"
+      icon: mdi:thermometer
+
+    - name: "Pressione Acqua"
+      state_topic: "opentherm-gateway/status"
+      value_template: "{{ value_json.pressure }}"
+      unit_of_measurement: "bar"
+      icon: mdi:gauge
+
+    - name: "Stato Fiamma"
+      state_topic: "opentherm-gateway/status"
+      value_template: "{{ 'Accesa' if value_json.flame_on else 'Spenta' }}"
+      icon: mdi:fire
+
+  number:
+    - name: "Imposta Temperatura (Setpoint)"
+      command_topic: "setpoint/set"
+      min: 30
+      max: 80
+      step: 0.5
+      unit_of_measurement: "°C"
+      icon: mdi:thermostat
