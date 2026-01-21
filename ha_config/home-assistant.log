@@ -1,1 +1,0 @@
-2026-01-21 09:49:25.187 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration extended_openai_conversation which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant

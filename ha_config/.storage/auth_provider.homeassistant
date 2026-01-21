@@ -5,8 +5,12 @@
   "data": {
     "users": [
       {
-        "username": "mary",
-        "password": "JDJiJDEyJFpWTTUyNUNUc2xrR25iVE4ualNVenVSV3R2dkdadzIzV1Z2UHc3Z3B1eUpYb2VkN2pSNkdH"
+        "username": "gruppo2",
+        "password": "JDJiJDEyJFlDZzRtOC9rVEJqZk50Zy9BUTd4Wi5ETDRuTVJGQWZ6b1YuRzAxei56S0FmL20yaFlXMHJX"
+      },
+      {
+        "username": "user",
+        "password": "JDJiJDEyJFRBd3cucG5mZU8yVXU0WE41OVdsc3VMQ3ZaLzNlZnU3eG9xd0tPUGtqTDFSN2VYRDBHdmJl"
       }
     ]
   }

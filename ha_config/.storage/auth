@@ -22,7 +22,18 @@
         ],
         "is_owner": true,
         "is_active": true,
-        "name": "Mary",
+        "name": "gruppo2",
+        "system_generated": false,
+        "local_only": false
+      },
+      {
+        "id": "4bede3d680634db59930f9766cceef30",
+        "group_ids": [
+          "system-users"
+        ],
+        "is_owner": false,
+        "is_active": true,
+        "name": "user",
         "system_generated": false,
         "local_only": false
       }
@@ -48,7 +59,16 @@
         "auth_provider_type": "homeassistant",
         "auth_provider_id": null,
         "data": {
-          "username": "mary"
+          "username": "gruppo2"
+        }
+      },
+      {
+        "id": "839c0d53ac054414a0e669d3c77865ee",
+        "user_id": "4bede3d680634db59930f9766cceef30",
+        "auth_provider_type": "homeassistant",
+        "auth_provider_id": null,
+        "data": {
+          "username": "user"
         }
       }
     ],
@@ -103,6 +123,23 @@
         "expire_at": 1776761406.157162,
         "credential_id": "876d8442b23e4def90979df5c5bb4d8d",
         "version": "2026.1.1"
+      },
+      {
+        "id": "ac15410d16a34f77a799d3226c038399",
+        "user_id": "f9485dc8fc9f428a93c56b81840cbf18",
+        "client_id": "http://localhost:8123/",
+        "client_name": null,
+        "client_icon": null,
+        "token_type": "normal",
+        "created_at": "2026-01-21T11:17:09.520829+00:00",
+        "access_token_expiration": 1800.0,
+        "token": "0da894b01023b882bf6fa3d75b1d34bcc8992ece023e0cfd50de7986b223a07cd34a22fbb85d76ff16bb061a49e9a9a7d205a27b05a3479676d74ee1eacddc0c",
+        "jwt_key": "40d380754337761cbc8a4b702d14c1a364f20bcce6c6c61e08244db8ee9f4ec7e6b451cb5b1239a75086dab724dc0756a4e6a536b4b0abd051494777d7465235",
+        "last_used_at": "2026-01-21T11:17:09.520886+00:00",
+        "last_used_ip": "172.19.0.1",
+        "expire_at": 1776770229.520886,
+        "credential_id": "876d8442b23e4def90979df5c5bb4d8d",
+        "version": "2026.1.2"
       }
     ]
   }

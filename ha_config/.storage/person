@@ -6,9 +6,10 @@
     "items": [
       {
         "id": "mary",
-        "name": "Mary",
+        "name": "gruppo2",
         "user_id": "f9485dc8fc9f428a93c56b81840cbf18",
-        "device_trackers": []
+        "device_trackers": [],
+        "picture": null
       }
     ]
   }
