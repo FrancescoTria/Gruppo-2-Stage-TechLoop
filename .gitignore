@@ -1,1 +1,4 @@
 .env
+wyoming/models--*
+wyoming/*.json
+wyoming/__pycache__/

@@ -5,21 +5,6 @@
   "data": {
     "items": [
       {
-        "conversation_engine": "conversation.home_assistant",
-        "conversation_language": "en",
-        "id": "01kes4xcjmjthjw6jqb477cafw",
-        "language": "en",
-        "name": "Home Assistant",
-        "stt_engine": null,
-        "stt_language": null,
-        "tts_engine": null,
-        "tts_language": null,
-        "tts_voice": null,
-        "wake_word_entity": null,
-        "wake_word_id": null,
-        "prefer_local_intents": false
-      },
-      {
         "conversation_engine": "conversation.extended_openai_conversation",
         "conversation_language": "*",
         "id": "01kfdk0fe80pqvpshcqbkanm4v",
@@ -33,8 +18,23 @@
         "wake_word_entity": null,
         "wake_word_id": null,
         "prefer_local_intents": true
+      },
+      {
+        "conversation_engine": "conversation.extended_openai_conversation",
+        "conversation_language": "*",
+        "id": "01kfgd3f7ch6y6sxpyczw7ewy9",
+        "language": "it",
+        "name": "Assistente Caldaia Completo",
+        "stt_engine": "stt.faster_whisper",
+        "stt_language": "it",
+        "tts_engine": "tts.piper",
+        "tts_language": "it_IT",
+        "tts_voice": "it_IT-paola-medium",
+        "wake_word_entity": null,
+        "wake_word_id": null,
+        "prefer_local_intents": true
       }
     ],
-    "preferred_item": "01kes4xcjmjthjw6jqb477cafw"
+    "preferred_item": "01kfgd3f7ch6y6sxpyczw7ewy9"
   }
 }
