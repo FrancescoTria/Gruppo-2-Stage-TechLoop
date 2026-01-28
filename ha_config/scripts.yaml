@@ -1,25 +1,58 @@
 chiama_tecnico_caldaia:
-  alias: "Chiama Tecnico Caldaia"
+  alias: Chiama Tecnico Caldaia
   mode: parallel
   icon: mdi:face-agent
-  description: "Il comando per il tecnico"
+  description: Il comando per il tecnico
   fields:
     comando_utente:
-      description: "Il comando da eseguire (Es: 'Metti a 40 gradi')"
-      example: "Metti a 50 gradi"
+      description: 'Il comando da eseguire (Es: ''Metti a 40 gradi'')'
+      example: Metti a 50 gradi
   sequence:
-    # Esegue solo se c'è un comando, altrimenti si ferma senza errori
-    - choose:
-        - conditions:
-            - condition: template
-              value_template: "{{ comando_utente is defined and comando_utente | length > 0 }}"
-          sequence:
-            - action: conversation.process
-              data:
-                agent_id: conversation.agente_tecnico
-                text: "{{ comando_utente }}"
-              response_variable: risposta_tecnico
-            - stop: "Ho passato la richiesta al tecnico."
-              response_variable: risposta_tecnico
-      default:
-        - stop: "Nessun comando rilevato."
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: '{{ comando_utente is defined and comando_utente | length
+          > 0 }}'
+      sequence:
+      - action: conversation.process
+        data:
+          agent_id: conversation.agente_tecnico
+          text: '{{ comando_utente }}'
+        response_variable: risposta_tecnico
+      - stop: Ho passato la richiesta al tecnico.
+        response_variable: risposta_tecnico
+    default:
+    - stop: Nessun comando rilevato.
+imposta_setpoint_caldaia:
+  sequence:
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      qos: 0
+      retain: false
+      payload: "alias: Imposta setpoint caldaia\nmode: single\nfields:\n  valore:\n
+        \   description: Setpoint in °C\n    example: 30\nsequence:\n  - service:
+        mqtt.publish\n    data:\n      topic: opentherm-gateway/setpoint/set\n      payload:
+        \"{{ valore }}\"\n"
+    alias: Imposta setpoint caldaia
+  - alias: 'Simulazione - rompi tubo caldaia '
+    action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      payload: "alias: Rompi tubo caldaia\nmode: single\nsequence:\n  - service: mqtt.publish\n
+        \   data:\n      topic: opentherm-gateway/fault/set\n      payload: \"ON\"\n"
+  - alias: Ripara tubo caldaia
+    action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      payload: "alias: Ripara tubo caldaia\nmode: single\nsequence:\n  - service:
+        mqtt.publish\n    data:\n      topic: opentherm-gateway/fault/set\n      payload:
+        \"OFF\"\n"
+  alias: Imposta setpoint caldaia
+  description: ''

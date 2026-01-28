@@ -4,7 +4,7 @@ import json
 import random
 
 # --- CONFIGURAZIONE ---
-BROKER = "127.0.0.1"
+BROKER = "mosquitto"
 PORT = 1883
 TOPIC_BASE = "opentherm-gateway"
 

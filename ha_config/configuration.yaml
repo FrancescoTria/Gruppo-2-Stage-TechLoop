@@ -75,3 +75,31 @@ mqtt:
       state_off: "OFF"
       icon: mdi:wrench
       unique_id: "caldaia_sim_fault_v2"
+
+intent_script:
+  CaldaiaSetpoint:
+    action:
+      service: mqtt.publish
+      data:
+        topic: "opentherm-gateway/setpoint/set"
+        payload: "{{ temp | float }}"
+    speech:
+      text: "Ok, setpoint a {{ temp }} gradi."
+
+  CaldaiaRotturaOn:
+    action:
+      service: mqtt.publish
+      data:
+        topic: "opentherm-gateway/fault/set"
+        payload: "ON"
+    speech:
+      text: "Ok, rottura tubo attivata."
+
+  CaldaiaRotturaOff:
+    action:
+      service: mqtt.publish
+      data:
+        topic: "opentherm-gateway/fault/set"
+        payload: "OFF"
+    speech:
+      text: "Ok, rottura tubo disattivata."

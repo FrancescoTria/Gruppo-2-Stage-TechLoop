@@ -1,0 +1,20 @@
+language: "it"
+intents:
+  CaldaiaSetpoint:
+    data:
+      - sentences:
+          - "imposta setpoint a {temp} gradi"
+          - "setpoint a {temp}"
+  CaldaiaRotturaOn:
+    data:
+      - sentences:
+          - "rompi il tubo"
+  CaldaiaRotturaOff:
+    data:
+      - sentences:
+          - "ripara il tubo"
+lists:
+  temp:
+    range:
+      from: 10
+      to: 80
