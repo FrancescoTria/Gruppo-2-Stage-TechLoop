@@ -1,9 +1,9 @@
 # Questo file definisce l'intera architettura e come i container interagiscono tra loro.
 
-version: '3.8'
+version: "3.8"
 
 services:
-  # 1. Il Broker MQTT (Il postino)
+  # 1. Broker MQTT (il "postino")
   mosquitto:
     image: eclipse-mosquitto:2
     container_name: mosquitto_broker
@@ -14,8 +14,8 @@ services:
       - mosquitto_data:/mosquitto/data
       - mosquitto_log:/mosquitto/log
     # Configurazione rapida per accettare connessioni anonime (solo per test locale)
-    command: ["mosquitto", "-c", "/mosquitto-no-auth.conf"] 
-    entrypoint: 
+    command: ["mosquitto", "-c", "/mosquitto-no-auth.conf"]
+    entrypoint:
       - sh
       - -c
       - |
@@ -23,29 +23,28 @@ services:
         echo "allow_anonymous true" >> /mosquitto-no-auth.conf
         /usr/sbin/mosquitto -c /mosquitto-no-auth.conf
 
-  # 2. Il Simulatore Caldaia (Il nostro script)
+  # 2. Simulatore Caldaia
   ot-thing-simulator:
-    build: .  # Dice a Docker: "Cerca un Dockerfile nella cartella corrente e costruisci l'immagine da lì".
+    build: .
     container_name: caldaia_simulator
-    depends_on:  # Dice a Docker: "Cerca di avviare Mosquitto prima di me". 
-    # Nota: questo controlla solo l'ordine di avvio, non se Mosquitto è pronto a ricevere connessioni
+    depends_on:
       - mosquitto
     restart: always
 
-  # 3. LiteLLM Proxy (Il Gateway)
+  # 3. LiteLLM Proxy (Gateway verso Ollama)
   litellm:
     image: ghcr.io/berriai/litellm:main-latest
     container_name: litellm_proxy
     ports:
-      - "4000:4000" # Porta esposta per Home Assistant
+      - "4000:4000"
     volumes:
-      - ./litellm_config.yaml:/app/config.yaml # Montiamo il file creato sopra
+      - ./litellm_config.yaml:/app/config.yaml
     depends_on:
       - ollama
-    command: [ "--config", "/app/config.yaml", "--port", "4000", "--detailed_debug" ]
+    command: ["--config", "/app/config.yaml", "--port", "4000", "--detailed_debug"]
     restart: always
 
-  # 4. Ollama (Il Cervello Locale)
+  # 4. Ollama (LLM locale)
   ollama:
     image: ollama/ollama:latest
     container_name: ollama
@@ -53,7 +52,7 @@ services:
       - "11434:11434"
     volumes:
       - ollama_data:/root/.ollama
-    # Se hai una GPU NVIDIA, scommenta qui sotto per velocizzare Gemma:
+    # Per GPU NVIDIA, scommenta questo blocco
     # deploy:
     #   resources:
     #     reservations:
@@ -63,7 +62,7 @@ services:
     #           capabilities: [gpu]
     restart: always
 
- # 5. Matter Server
+  # 5. Matter Server
   matter-server:
     image: ghcr.io/home-assistant-libs/python-matter-server:stable
     container_name: matter_server
@@ -71,14 +70,14 @@ services:
       - apparmor:unconfined
     volumes:
       - matter_data:/data
-      - /run/dbus:/run/dbus:ro  # CRUCIALE: Permette l'accesso al Bluetooth del PC Host
+      - /run/dbus:/run/dbus:ro
     restart: unless-stopped
 
-# --- CONFIGURAZIONE RETE FUTURA ---
-    # Quando userai un dispositivo REALE, togli il commento (#) alla riga sotto 
-    # e commenta la sezione 'ports'. Questo permetterà al server di "vedere" la rete locale (mDNS).
-
+    # --- CONFIGURAZIONE RETE FUTURA ---
+    # Quando userai un dispositivo reale, togli il commento alla riga sotto
+    # e commenta la sezione ports. Questo permetterà al server di vedere la rete locale (mDNS).
     # network_mode: host
+
     ports:
       - "5580:5580"
 
@@ -87,25 +86,25 @@ services:
       --primary-interface eth0
       --port 5580
 
-  # 6. Home Assistant (Il Cervello)
+  # 6. Home Assistant
   homeassistant:
     image: lscr.io/linuxserver/homeassistant:latest
     container_name: homeassistant
-    ports:                
+    ports:
       - "8123:8123"
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Rome
     volumes:
-      - ./ha_config:/config 
+      - ./ha_config:/config
     depends_on:
       - matter-server
       - mosquitto
       - litellm
     restart: always
 
-  # 7. Whisper (Orecchie - Speech to Text)
+  # 7. Whisper (Speech to Text)
   whisper:
     image: rhasspy/wyoming-whisper
     container_name: whisper
@@ -116,7 +115,7 @@ services:
       - "10300:10300"
     restart: unless-stopped
 
-  # 8. Piper (Bocca - Text to Speech)
+  # 8. Piper (Text to Speech)
   piper:
     image: rhasspy/wyoming-piper
     container_name: piper
@@ -126,6 +125,17 @@ services:
     ports:
       - "10200:10200"
     restart: unless-stopped
+
+  # 9. PocketBase (DB tipo "tabelle")
+  pocketbase:
+    image: ghcr.io/muchobien/pocketbase:latest
+    container_name: pocketbase
+    restart: unless-stopped
+    ports:
+      - "8090:8090"
+    volumes:
+      - ./pb_data:/pb_data
+    command: ["--dir", "/pb_data", "--http", "0.0.0.0:8090"]
 
 volumes:
   mosquitto_data:

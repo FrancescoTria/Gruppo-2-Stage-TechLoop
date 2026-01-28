@@ -1,1 +1,31 @@
 2026-01-28 12:42:51.686 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration extended_openai_conversation which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-01-28 12:42:52.496 WARNING (Recorder) [homeassistant.components.recorder.util] The system could not validate that the sqlite3 database at //config/home-assistant_v2.db was shutdown cleanly
+2026-01-28 12:42:52.563 WARNING (Recorder) [homeassistant.components.recorder.util] Ended unfinished session (id=21 from 2026-01-28 11:31:07.294454)
+2026-01-28 12:45:27.223 ERROR (MainThread) [homeassistant.components.script.chiama_tecnico_caldaia] Chiama Tecnico Caldaia: Choose at step 1: choice 1: Error executing script. Invalid data for call_service at pos 1: invalid agent ID for dictionary value @ data['agent_id']
+2026-01-28 12:45:27.223 ERROR (MainThread) [homeassistant.components.script.chiama_tecnico_caldaia] Chiama Tecnico Caldaia: Error executing script. Invalid data for choose at pos 1: invalid agent ID for dictionary value @ data['agent_id']
+2026-01-28 12:45:27.250 ERROR (MainThread) [frontend.js.modern.202601072] Uncaught error from Chrome 144.0.0.0 on Windows 10
+ReferenceError: Cannot access 'a' before initialization
+hassMessageProcesser.processEvent (src/components/ha-assist-chat.ts:461:12)
+callback (node_modules/home-assistant-js-websocket/dist/connection.js:23:33)
+forEach (node_modules/home-assistant-js-websocket/dist/connection.js:15:25)
+2026-01-28 12:46:11.348 ERROR (MainThread) [homeassistant.components.script.chiama_tecnico_caldaia] Chiama Tecnico Caldaia: Choose at step 1: choice 1: Error executing script. Invalid data for call_service at pos 1: invalid agent ID for dictionary value @ data['agent_id']
+2026-01-28 12:46:11.348 ERROR (MainThread) [homeassistant.components.script.chiama_tecnico_caldaia] Chiama Tecnico Caldaia: Error executing script. Invalid data for choose at pos 1: invalid agent ID for dictionary value @ data['agent_id']
+2026-01-28 12:46:11.388 ERROR (MainThread) [frontend.js.modern.202601072] Uncaught error from Chrome 144.0.0.0 on Windows 10
+ReferenceError: Cannot access 'a' before initialization
+hassMessageProcesser.processEvent (src/components/ha-assist-chat.ts:461:12)
+callback (node_modules/home-assistant-js-websocket/dist/connection.js:23:33)
+forEach (node_modules/home-assistant-js-websocket/dist/connection.js:15:25)
+2026-01-28 12:46:50.018 ERROR (MainThread) [homeassistant.components.script.chiama_tecnico_caldaia] Chiama Tecnico Caldaia: Choose at step 1: choice 1: Error executing script. Invalid data for call_service at pos 1: invalid agent ID for dictionary value @ data['agent_id']
+2026-01-28 12:46:50.018 ERROR (MainThread) [homeassistant.components.script.chiama_tecnico_caldaia] Chiama Tecnico Caldaia: Error executing script. Invalid data for choose at pos 1: invalid agent ID for dictionary value @ data['agent_id']
+2026-01-28 12:46:50.649 ERROR (MainThread) [frontend.js.modern.202601072] Uncaught error from Chrome 144.0.0.0 on Windows 10
+ReferenceError: Cannot access 'a' before initialization
+hassMessageProcesser.processEvent (src/components/ha-assist-chat.ts:461:12)
+callback (node_modules/home-assistant-js-websocket/dist/connection.js:23:33)
+forEach (node_modules/home-assistant-js-websocket/dist/connection.js:15:25)
+2026-01-28 12:47:43.030 ERROR (MainThread) [homeassistant.components.script.chiama_tecnico_caldaia] Chiama Tecnico Caldaia: Choose at step 1: choice 1: Error executing script. Invalid data for call_service at pos 1: invalid agent ID for dictionary value @ data['agent_id']
+2026-01-28 12:47:43.030 ERROR (MainThread) [homeassistant.components.script.chiama_tecnico_caldaia] Chiama Tecnico Caldaia: Error executing script. Invalid data for choose at pos 1: invalid agent ID for dictionary value @ data['agent_id']
+2026-01-28 12:47:43.055 ERROR (MainThread) [frontend.js.modern.202601072] Uncaught error from Chrome 144.0.0.0 on Windows 10
+ReferenceError: Cannot access 'a' before initialization
+hassMessageProcesser.processEvent (src/components/ha-assist-chat.ts:461:12)
+callback (node_modules/home-assistant-js-websocket/dist/connection.js:23:33)
+forEach (node_modules/home-assistant-js-websocket/dist/connection.js:15:25)
