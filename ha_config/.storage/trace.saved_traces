@@ -2,5 +2,390 @@
   "version": 1,
   "minor_version": 1,
   "key": "trace.saved_traces",
-  "data": {}
+  "data": {
+    "automation.1769187794309": [
+      {
+        "extended_dict": {
+          "last_step": "action/1",
+          "run_id": "d061668bc85e124651f595dc63f5093f",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2026-01-28T08:52:06.588460+00:00",
+            "finish": "2026-01-28T08:52:06.604459+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1769187794309",
+          "trigger": null,
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2026-01-28T08:52:06.588527+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.comando_vocale_caldaia_diretto",
+                    "state": "on",
+                    "attributes": {
+                      "id": "1769187794309",
+                      "last_triggered": "2026-01-27T15:54:44.826220+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Comando Vocale Caldaia (Diretto)"
+                    },
+                    "last_changed": "2026-01-28T08:18:26.611926+00:00",
+                    "last_reported": "2026-01-28T08:18:26.611926+00:00",
+                    "last_updated": "2026-01-28T08:18:26.611926+00:00",
+                    "context": {
+                      "id": "01KG1TXCNK4YPSHF45DS2F15WG",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "conversation",
+                    "sentence": "alza la temperatura a 50 gradi",
+                    "details": {
+                      "gradi": {
+                        "name": "gradi",
+                        "text": "50",
+                        "value": "50"
+                      }
+                    },
+                    "slots": {
+                      "gradi": "50"
+                    },
+                    "device_id": null,
+                    "satellite_id": null,
+                    "user_input": {
+                      "text": "alza la temperatura a 50 gradi",
+                      "context": {
+                        "id": "01KG1WV19SXRWY1RDPZ72Q6SRJ",
+                        "parent_id": null,
+                        "user_id": "f9485dc8fc9f428a93c56b81840cbf18"
+                      },
+                      "conversation_id": "01KG1WV19SR94C3MFP2JX2AHMG",
+                      "device_id": null,
+                      "satellite_id": null,
+                      "language": "it",
+                      "agent_id": "conversation.extended_openai_conversation",
+                      "extra_system_prompt": null
+                    }
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2026-01-28T08:52:06.588951+00:00",
+                "child_id": {
+                  "domain": "script",
+                  "item_id": "chiama_tecnico_caldaia",
+                  "run_id": "fd4be7cce9a349b62c245db21411a133"
+                },
+                "changed_variables": {
+                  "context": {
+                    "id": "01KG1WV19W3MTGYPSZ0FNG04BD",
+                    "parent_id": null,
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "script",
+                    "service": "turn_on",
+                    "service_data": {
+                      "variables": {
+                        "comando_utente": "Imposta la temperatura a 50 gradi"
+                      },
+                      "entity_id": [
+                        "script.chiama_tecnico_caldaia"
+                      ]
+                    },
+                    "target": {
+                      "entity_id": [
+                        "script.chiama_tecnico_caldaia"
+                      ]
+                    }
+                  },
+                  "running_script": true
+                }
+              }
+            ],
+            "action/1": [
+              {
+                "path": "action/1",
+                "timestamp": "2026-01-28T08:52:06.604262+00:00",
+                "result": {
+                  "conversation_response": "Certamente, ho impostato la temperatura a 50 gradi."
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "1769187794309",
+            "alias": "Comando Vocale Caldaia (Diretto)",
+            "description": "Scavalca l'IA e risponde con la temperatura impostata",
+            "triggers": [
+              {
+                "trigger": "conversation",
+                "command": [
+                  "Imposta la temperatura a {gradi} gradi",
+                  "Metti la temperatura a {gradi}",
+                  "Voglio {gradi} gradi in casa",
+                  "Regola la caldaia a {gradi} gradi",
+                  "Alza la temperatura a {gradi} gradi",
+                  "Abbassa la temperatura a {gradi} gradi"
+                ]
+              }
+            ],
+            "conditions": [],
+            "actions": [
+              {
+                "action": "script.turn_on",
+                "target": {
+                  "entity_id": "script.chiama_tecnico_caldaia"
+                },
+                "data": {
+                  "variables": {
+                    "comando_utente": "Imposta la temperatura a {{ trigger.slots.gradi }} gradi"
+                  }
+                }
+              },
+              {
+                "set_conversation_response": "Certamente, ho impostato la temperatura a {{ trigger.slots.gradi }} gradi."
+              }
+            ],
+            "mode": "single"
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01KG1WV19W3MTGYPSZ0FNG04BD",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/1",
+          "run_id": "d061668bc85e124651f595dc63f5093f",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2026-01-28T08:52:06.588460+00:00",
+            "finish": "2026-01-28T08:52:06.604459+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1769187794309",
+          "trigger": null
+        }
+      }
+    ],
+    "script.chiama_tecnico_caldaia": [
+      {
+        "extended_dict": {
+          "last_step": "sequence/0/choose/0/sequence/1",
+          "run_id": "fd4be7cce9a349b62c245db21411a133",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2026-01-28T08:52:06.589749+00:00",
+            "finish": "2026-01-28T08:52:06.641892+00:00"
+          },
+          "domain": "script",
+          "item_id": "chiama_tecnico_caldaia",
+          "trace": {
+            "sequence/0": [
+              {
+                "path": "sequence/0",
+                "timestamp": "2026-01-28T08:52:06.590010+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "script.chiama_tecnico_caldaia",
+                    "state": "off",
+                    "attributes": {
+                      "last_triggered": "2026-01-27T15:54:44.827446+00:00",
+                      "mode": "parallel",
+                      "current": 0,
+                      "max": 10,
+                      "icon": "mdi:face-agent",
+                      "friendly_name": "Chiama Tecnico Caldaia"
+                    },
+                    "last_changed": "2026-01-28T08:18:24.542723+00:00",
+                    "last_reported": "2026-01-28T08:18:24.542723+00:00",
+                    "last_updated": "2026-01-28T08:18:24.542723+00:00",
+                    "context": {
+                      "id": "01KG1TXAMY3H2AEN2P3XVFN50E",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "comando_utente": "Imposta la temperatura a 50 gradi",
+                  "context": {
+                    "id": "01KG1WV19W3MTGYPSZ0FNG04BD",
+                    "parent_id": null,
+                    "user_id": null
+                  },
+                  "risposta_tecnico": {
+                    "response": {
+                      "speech": {
+                        "plain": {
+                          "speech": "Sorry, I had a problem talking to OpenAI: Error code: 400 - {'error': {'message': \"{'error': '/chat/completions: Invalid model name passed in model=boiler-technician. Call `/v1/models` to view available models for your key.'}\", 'type': 'None', 'param': 'None', 'code': '400'}}",
+                          "extra_data": null
+                        }
+                      },
+                      "card": {},
+                      "language": "it",
+                      "response_type": "error",
+                      "data": {
+                        "code": "unknown"
+                      }
+                    },
+                    "conversation_id": "01KG1WV19Z44R2N27784DKS65F",
+                    "continue_conversation": false
+                  }
+                },
+                "result": {
+                  "choice": 0
+                }
+              }
+            ],
+            "sequence/0/choose/0": [
+              {
+                "path": "sequence/0/choose/0",
+                "timestamp": "2026-01-28T08:52:06.590194+00:00",
+                "result": {
+                  "result": true
+                }
+              }
+            ],
+            "sequence/0/choose/0/conditions/0": [
+              {
+                "path": "sequence/0/choose/0/conditions/0",
+                "timestamp": "2026-01-28T08:52:06.590240+00:00",
+                "result": {
+                  "result": true,
+                  "entities": []
+                }
+              }
+            ],
+            "sequence/0/choose/0/sequence/0": [
+              {
+                "path": "sequence/0/choose/0/sequence/0",
+                "timestamp": "2026-01-28T08:52:06.590550+00:00",
+                "changed_variables": {
+                  "risposta_tecnico": {
+                    "response": {
+                      "speech": {
+                        "plain": {
+                          "speech": "Sorry, I had a problem talking to OpenAI: Error code: 400 - {'error': {'message': \"{'error': '/chat/completions: Invalid model name passed in model=boiler-technician. Call `/v1/models` to view available models for your key.'}\", 'type': 'None', 'param': 'None', 'code': '400'}}",
+                          "extra_data": null
+                        }
+                      },
+                      "card": {},
+                      "language": "it",
+                      "response_type": "error",
+                      "data": {
+                        "code": "unknown"
+                      }
+                    },
+                    "conversation_id": "01KG1WV19Z44R2N27784DKS65F",
+                    "continue_conversation": false
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "conversation",
+                    "service": "process",
+                    "service_data": {
+                      "agent_id": "conversation.agente_tecnico",
+                      "text": "Imposta la temperatura a 50 gradi"
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "sequence/0/choose/0/sequence/1": [
+              {
+                "path": "sequence/0/choose/0/sequence/1",
+                "timestamp": "2026-01-28T08:52:06.640118+00:00",
+                "result": {
+                  "stop": "Ho passato la richiesta al tecnico.",
+                  "error": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "alias": "Chiama Tecnico Caldaia",
+            "mode": "parallel",
+            "icon": "mdi:face-agent",
+            "description": "Il comando per il tecnico",
+            "fields": {
+              "comando_utente": {
+                "description": "Il comando da eseguire (Es: 'Metti a 40 gradi')",
+                "example": "Metti a 50 gradi"
+              }
+            },
+            "sequence": [
+              {
+                "choose": [
+                  {
+                    "conditions": [
+                      {
+                        "condition": "template",
+                        "value_template": "{{ comando_utente is defined and comando_utente | length > 0 }}"
+                      }
+                    ],
+                    "sequence": [
+                      {
+                        "action": "conversation.process",
+                        "data": {
+                          "agent_id": "conversation.agente_tecnico",
+                          "text": "{{ comando_utente }}"
+                        },
+                        "response_variable": "risposta_tecnico"
+                      },
+                      {
+                        "stop": "Ho passato la richiesta al tecnico.",
+                        "response_variable": "risposta_tecnico"
+                      }
+                    ]
+                  }
+                ],
+                "default": [
+                  {
+                    "stop": "Nessun comando rilevato."
+                  }
+                ]
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01KG1WV19W3MTGYPSZ0FNG04BD",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "sequence/0/choose/0/sequence/1",
+          "run_id": "fd4be7cce9a349b62c245db21411a133",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2026-01-28T08:52:06.589749+00:00",
+            "finish": "2026-01-28T08:52:06.641892+00:00"
+          },
+          "domain": "script",
+          "item_id": "chiama_tecnico_caldaia"
+        }
+      }
+    ]
+  }
 }

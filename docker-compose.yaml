@@ -40,12 +40,30 @@ services:
       - "4000:4000" # Porta esposta per Home Assistant
     volumes:
       - ./litellm_config.yaml:/app/config.yaml # Montiamo il file creato sopra
-    environment:
-      - GROQ_API_KEY=${GROQ_API_KEY} # La chiave API (la inseriremo in un file .env)
+    depends_on:
+      - ollama
     command: [ "--config", "/app/config.yaml", "--port", "4000", "--detailed_debug" ]
     restart: always
 
- # 4. Matter Server
+  # 4. Ollama (Il Cervello Locale)
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    # Se hai una GPU NVIDIA, scommenta qui sotto per velocizzare Gemma:
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+    restart: always
+
+ # 5. Matter Server
   matter-server:
     image: ghcr.io/home-assistant-libs/python-matter-server:stable
     container_name: matter_server
@@ -63,13 +81,13 @@ services:
     # network_mode: host
     ports:
       - "5580:5580"
-      
+
     command: >
       --storage-path /data
       --primary-interface eth0
       --port 5580
 
-  # 5. Home Assistant (Il Cervello)
+  # 6. Home Assistant (Il Cervello)
   homeassistant:
     image: lscr.io/linuxserver/homeassistant:latest
     container_name: homeassistant
@@ -84,9 +102,10 @@ services:
     depends_on:
       - matter-server
       - mosquitto
+      - litellm
     restart: always
 
-  # 6. Whisper (Orecchie - Speech to Text)
+  # 7. Whisper (Orecchie - Speech to Text)
   whisper:
     image: rhasspy/wyoming-whisper
     container_name: whisper
@@ -97,7 +116,7 @@ services:
       - "10300:10300"
     restart: unless-stopped
 
-  # 7. Piper (Bocca - Text to Speech)
+  # 8. Piper (Bocca - Text to Speech)
   piper:
     image: rhasspy/wyoming-piper
     container_name: piper
@@ -112,3 +131,4 @@ volumes:
   mosquitto_data:
   mosquitto_log:
   matter_data:
+  ollama_data:

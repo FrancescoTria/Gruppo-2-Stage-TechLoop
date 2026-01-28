@@ -1,1 +1,46 @@
-[]
+- id: gestione_guasto_caldaia_ai
+  alias: Gestione Guasto Caldaia AI
+  trigger:
+  - platform: state
+    entity_id: sensor.caldaia_codice_errore_v2
+    from: '0'
+  action:
+  - action: conversation.process
+    data:
+      agent_id: conversation.agente_tecnico
+      text: Analizza il codice errore {{ trigger.to_state.state }} della caldaia.
+        Cosa significa?
+    response_variable: diagnosi_tecnica
+  - action: conversation.process
+    data:
+      agent_id: conversation.agente_chat
+      text: 'Il tecnico dice: ''{{ diagnosi_tecnica.response.speech.plain.speech }}''.
+        Spiegalo all''utente in modo gentile.'
+    response_variable: risposta_utente
+  - action: notify.persistent_notification
+    data:
+      title: Problema Caldaia
+      message: '{{ risposta_utente.response.speech.plain.speech }}'
+- id: '1769187794309'
+  alias: Comando Vocale Caldaia (Diretto)
+  description: Scavalca l'IA e risponde con la temperatura impostata
+  triggers:
+  - trigger: conversation
+    command:
+    - Imposta la temperatura a {gradi} gradi
+    - Metti la temperatura a {gradi}
+    - Voglio {gradi} gradi in casa
+    - Regola la caldaia a {gradi} gradi
+    - Alza la temperatura a {gradi} gradi
+    - Abbassa la temperatura a {gradi} gradi
+  conditions: []
+  actions:
+  - action: script.turn_on
+    target:
+      entity_id: script.chiama_tecnico_caldaia
+    data:
+      variables:
+        comando_utente: Imposta la temperatura a {{ trigger.slots.gradi }} gradi
+  - set_conversation_response: Certamente, ho impostato la temperatura a {{ trigger.slots.gradi
+      }} gradi.
+  mode: single

@@ -1,5 +1,9 @@
+litellm_settings:
+  drop_params: true
+  
 model_list:
-  - model_name: gpt-3.5-turbo  # Il nome che useremo in Home Assistant
+  - model_name: gemma-agente-unico
     litellm_params:
-      model: groq/llama-3.3-70b-versatile
-      api_key: os.environ/GROQ_API_KEY # Prende la chiave dalle variabili d'ambiente
+      model: ollama/gemma2:2b
+      api_base: http://ollama:11434
+      temperature: 0.1

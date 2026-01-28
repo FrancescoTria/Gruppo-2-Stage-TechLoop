@@ -447,7 +447,24 @@ class NativeFunctionExecutor(FunctionExecutor):
 class ScriptFunctionExecutor(FunctionExecutor):
     def __init__(self) -> None:
         """initialize script function"""
-        super().__init__(SCRIPT_ENTITY_SCHEMA)
+        # Allow 'name' field for script entity reference, then validate with SCRIPT_ENTITY_SCHEMA
+        schema = SCRIPT_ENTITY_SCHEMA.extend({
+            vol.Optional("name"): str
+        })
+        super().__init__(schema)
+    
+    def to_arguments(self, arguments):
+        """to_arguments function - remove 'name' field if present before validation"""
+        # If 'name' is present, we'll handle it in execute(), but remove it for schema validation
+        if isinstance(arguments, dict) and "name" in arguments:
+            # Create a copy without 'name' for validation
+            args_without_name = {k: v for k, v in arguments.items() if k != "name"}
+            validated = super().to_arguments(args_without_name)
+            # Restore 'name' if it was in original arguments
+            if "name" in arguments:
+                validated["name"] = arguments["name"]
+            return validated
+        return super().to_arguments(arguments)
 
     async def execute(
         self,
@@ -457,9 +474,55 @@ class ScriptFunctionExecutor(FunctionExecutor):
         user_input: conversation.ConversationInput,
         exposed_entities,
     ):
+        # If 'name' is provided, load script from entity
+        if "name" in function:
+            script_entity_id = function["name"]
+            # Extract script ID from entity_id (format: "script.chiama_tecnico_caldaia" -> "chiama_tecnico_caldaia")
+            script_id = script_entity_id.split(".", 1)[1] if "." in script_entity_id else script_entity_id
+            
+            # Try to get script configuration from hass.data["script"]
+            script_config = None
+            if "script" in hass.data:
+                scripts = hass.data["script"]
+                # Scripts are stored by their ID
+                if script_id in scripts:
+                    script_config = scripts[script_id]
+                    # If it's a ScriptEntity object, get its config
+                    if hasattr(script_config, "config"):
+                        script_config = script_config.config
+                    elif hasattr(script_config, "_config"):
+                        script_config = script_config._config
+                    elif isinstance(script_config, dict):
+                        pass  # Already a dict
+                    else:
+                        # Try to get sequence from Script object
+                        if hasattr(script_config, "sequence"):
+                            sequence = script_config.sequence
+                            script = Script(
+                                hass,
+                                sequence,
+                                "extended_openai_conversation",
+                                DOMAIN,
+                                running_description="[extended_openai_conversation] function",
+                                logger=_LOGGER,
+                            )
+                            result = await script.async_run(
+                                run_variables=arguments, context=user_input.context
+                            )
+                            return result.variables.get("_function_result", "Success")
+            
+            # If we have config dict, extract sequence
+            if script_config and isinstance(script_config, dict):
+                sequence = script_config.get("sequence", [])
+            else:
+                raise HomeAssistantError(f"Script entity {script_entity_id} not found or invalid")
+        else:
+            # Use sequence directly from function
+            sequence = function["sequence"]
+        
         script = Script(
             hass,
-            function["sequence"],
+            sequence,
             "extended_openai_conversation",
             DOMAIN,
             running_description="[extended_openai_conversation] function",

@@ -1,0 +1,25 @@
+chiama_tecnico_caldaia:
+  alias: "Chiama Tecnico Caldaia"
+  mode: parallel
+  icon: mdi:face-agent
+  description: "Il comando per il tecnico"
+  fields:
+    comando_utente:
+      description: "Il comando da eseguire (Es: 'Metti a 40 gradi')"
+      example: "Metti a 50 gradi"
+  sequence:
+    # Esegue solo se c'è un comando, altrimenti si ferma senza errori
+    - choose:
+        - conditions:
+            - condition: template
+              value_template: "{{ comando_utente is defined and comando_utente | length > 0 }}"
+          sequence:
+            - action: conversation.process
+              data:
+                agent_id: conversation.agente_tecnico
+                text: "{{ comando_utente }}"
+              response_variable: risposta_tecnico
+            - stop: "Ho passato la richiesta al tecnico."
+              response_variable: risposta_tecnico
+      default:
+        - stop: "Nessun comando rilevato."

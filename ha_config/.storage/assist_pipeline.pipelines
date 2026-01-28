@@ -5,16 +5,31 @@
   "data": {
     "items": [
       {
-        "conversation_engine": "conversation.extended_openai_conversation",
+        "conversation_engine": "conversation.agente_chat",
         "conversation_language": "*",
-        "id": "01kfdk0fe80pqvpshcqbkanm4v",
+        "id": "01kfnp2va4qe1tw2zxk1y7gd9g",
         "language": "it",
-        "name": "Assistente Caldaia",
-        "stt_engine": null,
-        "stt_language": null,
-        "tts_engine": null,
-        "tts_language": null,
-        "tts_voice": null,
+        "name": "Chat",
+        "stt_engine": "stt.faster_whisper",
+        "stt_language": "it",
+        "tts_engine": "tts.piper",
+        "tts_language": "it_IT",
+        "tts_voice": "it_IT-paola-medium",
+        "wake_word_entity": null,
+        "wake_word_id": null,
+        "prefer_local_intents": true
+      },
+      {
+        "conversation_engine": "conversation.agente_tecnico",
+        "conversation_language": "*",
+        "id": "01kfxd2ta3wq3838zx6qqy6y1k",
+        "language": "it",
+        "name": "Agente Tecnico",
+        "stt_engine": "stt.faster_whisper",
+        "stt_language": "it",
+        "tts_engine": "tts.piper",
+        "tts_language": "it_IT",
+        "tts_voice": "it_IT-paola-medium",
         "wake_word_entity": null,
         "wake_word_id": null,
         "prefer_local_intents": true
@@ -22,9 +37,9 @@
       {
         "conversation_engine": "conversation.extended_openai_conversation",
         "conversation_language": "*",
-        "id": "01kfgd3f7ch6y6sxpyczw7ewy9",
+        "id": "01kfzxhvt5rm1w7kchv091gjv4",
         "language": "it",
-        "name": "Assistente Caldaia Completo",
+        "name": "Gemma Home",
         "stt_engine": "stt.faster_whisper",
         "stt_language": "it",
         "tts_engine": "tts.piper",
@@ -35,6 +50,6 @@
         "prefer_local_intents": true
       }
     ],
-    "preferred_item": "01kfgd3f7ch6y6sxpyczw7ewy9"
+    "preferred_item": "01kfzxhvt5rm1w7kchv091gjv4"
   }
 }
