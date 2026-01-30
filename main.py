@@ -2,6 +2,7 @@ import time
 import paho.mqtt.client as mqtt
 import json
 import random
+import requests
 
 # --- CONFIGURAZIONE ---
 BROKER = "mosquitto"
@@ -20,10 +21,35 @@ state = {
     "fault_active": False  # Se True, simuliamo la rottura
 }
 
+# --- FUNZIONI POCKETBASE ---
+def get_pocketbase_fix(error_code, protocollo="OpenTherm"):
+    # Usiamo host.docker.internal per uscire dal container
+    pb_url = "http://pocketbase:8090/api/collections/Caldaia_codici_errori/records"
+    
+    # NOTA: Qui uso le Maiuscole perché nel tuo DB si chiamano "Codice" e "Protocollo"
+    params = {
+        "filter": f'Codice="{error_code}" && Protocollo="{protocollo}"'
+    }
+    
+    try:
+        r = requests.get(pb_url, params=params, timeout=2)
+        
+        # Se vuoi vedere i log di debug, togli il commento alla riga sotto:
+        # print(f"[DEBUG] DB Status: {r.status_code} | Risposta: {r.text}")
+
+        data = r.json()
+        if data.get("items") and len(data["items"]) > 0:
+            # NOTA: Anche qui "Soluzione" con la S maiuscola
+            return data["items"][0]["Soluzione"]
+            
+    except Exception as e:
+        print(f"Errore DB: {e}")
+
+    return "Contattare assistenza tecnica."
+
 # --- FUNZIONI MQTT ---
 def on_connect(client, userdata, flags, rc):
     print(f"Connesso al Broker con codice: {rc}")
-    # Ci iscriviamo a DUE argomenti: il setpoint e il comando guasti
     client.subscribe(f"{TOPIC_BASE}/setpoint/set")
     client.subscribe(f"{TOPIC_BASE}/fault/set") 
 
@@ -32,24 +58,23 @@ def on_message(client, userdata, msg):
     payload = msg.payload.decode()
     print(f"[RX] Messaggio ricevuto su {topic}: {payload}")
 
-    # Logica Setpoint Temperatura
     if "setpoint" in topic:
         try:
             state["setpoint"] = float(payload)
-        except:
+        except ValueError:
             pass
-
-    # Logica Guasto 
+            
     elif "fault" in topic:
         if payload == "ON":
             state["fault_active"] = True
             print("!!! ATTENZIONE: SIMULAZIONE ROTTURA TUBO ATTIVATA !!!")
-        else:
+        elif payload == "OFF":
             state["fault_active"] = False
-            state["pressure"] = 1.5 # Ripristina pressione
+            state["pressure"] = 1.5
             state["error_code"] = 0
             print("!!! RIPARAZIONE EFFETTUATA: SISTEMA OK !!!")
 
+# --- SETUP MQTT ---
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
@@ -64,27 +89,24 @@ while True:
 
 client.loop_start()
 
-# --- CICLO PRINCIPALE ---
+# --- LOOP PRINCIPALE ---
 while True:
-    # 1. GESTIONE GUASTO (Rottura Tubo)
+    time.sleep(2)
+    
+    # 1. SIMULAZIONE GUASTO (Pressione scende)
     if state["fault_active"]:
-        # Se il guasto è attivo, la pressione scende velocemente
-        if state["pressure"] > 0:
-            state["pressure"] -= 0.05  # Perde 0.05 bar ogni secondo
-            state["pressure"] = round(state["pressure"], 2)
-        
-        # Se la pressione è critica (< 0.8), scatta l'errore
+        state["pressure"] -= 0.1
         if state["pressure"] < 0.8:
-            state["error_code"] = 10     # Errore bassa pressione
-            state["flame_on"] = False    # Spegni fiamma per sicurezza
-            state["modulation"] = 0
+            state["error_code"] = 10 
+            state["pressure"] = max(0.0, state["pressure"])
     else:
-        # Funzionamento Normale: Pressione oscilla intorno a 1.5
-        variation = random.uniform(-0.02, 0.02)
-        state["pressure"] = round(1.5 + variation, 2)
+        # Recupero lento pressione se non c'è guasto
+        if state["pressure"] < 1.5:
+             state["pressure"] += 0.05
+             state["pressure"] = round(state["pressure"], 2)
         state["error_code"] = 0
 
-    # 2. LOGICA TERMOSTATO (Funziona solo se non c'è errore 10)
+    # 2. LOGICA TERMOSTATO
     if state["error_code"] == 0:
         if state["water_temp"] < state["setpoint"] - 2:
             state["flame_on"] = True
@@ -94,31 +116,27 @@ while True:
             state["modulation"] = 0
 
     # 3. FISICA DELL'ACQUA
-    TEMPERATURA_AMBIENTE = 20.0  # La casa non scende mai sotto questa temperatura
-    
+    TEMPERATURA_AMBIENTE = 20.0
     if state["flame_on"]:
         state["water_temp"] += 0.4
     else:
-        # Si raffredda SOLO se è più calda dell'ambiente
         if state["water_temp"] > TEMPERATURA_AMBIENTE:
             state["water_temp"] -= 0.1 
 
-    # Calcolo Status Bit (Per Home Assistant)
-    # Bit 0 = Guasto (1 se attivo), Bit 3 = Fiamma (8 se attiva)
-    status_val = 0
-    if state["flame_on"]: status_val += 8
-    if state["error_code"] > 0: status_val += 1
-    
-    # 4. INVIO DATI A HOME ASSISTANT
-    payload = {
-        "ID_0": {"master_status": 0, "slave_status": status_val},
-        "ID_25": round(state["water_temp"], 1), # Mandata
-        "ID_28": round(state["water_temp"] - 10, 1), # Ritorno (finto)
-        "ID_1": state["setpoint"],
-        "ID_9": state["pressure"],
-        "ID_17": state["modulation"],
-        "ID_5": state["error_code"] # Codice errore
-    }
+    # 4. PREPARAZIONE DATI PER HA
+    # Se c'è errore, interrogo PocketBase
+    error_desc = ""
+    if state["error_code"] != 0:
+        error_desc = get_pocketbase_fix(state["error_code"])
 
+    payload = {
+        "ID_0": {"slave_status": (8 if state["flame_on"] else 0) + (1 if state["error_code"] > 0 else 0)},
+        "ID_5": state["error_code"],
+        "ID_9": round(state["pressure"], 2),
+        "ID_25": round(state["water_temp"], 1),
+        "ID_28": round(state["water_temp"] - 5, 1), # Ritorno finto
+        "ID_1": state["setpoint"],
+        "error_description": error_desc 
+    }
+    
     client.publish(f"{TOPIC_BASE}/status", json.dumps(payload))
-    time.sleep(1)

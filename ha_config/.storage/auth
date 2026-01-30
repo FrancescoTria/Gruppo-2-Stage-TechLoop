@@ -108,23 +108,6 @@
         "version": "2026.1.1"
       },
       {
-        "id": "e66ba6291760488c915e05c73d29b0fd",
-        "user_id": "f9485dc8fc9f428a93c56b81840cbf18",
-        "client_id": "http://localhost:8123/",
-        "client_name": null,
-        "client_icon": null,
-        "token_type": "normal",
-        "created_at": "2026-01-20T10:13:05.844161+00:00",
-        "access_token_expiration": 1800.0,
-        "token": "c1cc98243119b79b90b81887b6eecfcef5e95ff2a2a21fdd550aa6c2585a2969509fc8998415dedc582fa36f8d8d6565f8ec4edf577e86a59c3777790d8f2d57",
-        "jwt_key": "0051c2c0215b4bbf61ff1f0d7aca1fbabfc3c142d799cb72f7fc4a60fcf97fe1360e30d70eb33b1a0fe5f0a1a4d7cb7d03a688e5a27ed65f6c6867e3c7da6136",
-        "last_used_at": "2026-01-28T10:04:36.741350+00:00",
-        "last_used_ip": "172.19.0.1",
-        "expire_at": 1777370676.74135,
-        "credential_id": "876d8442b23e4def90979df5c5bb4d8d",
-        "version": "2026.1.1"
-      },
-      {
         "id": "ac15410d16a34f77a799d3226c038399",
         "user_id": "f9485dc8fc9f428a93c56b81840cbf18",
         "client_id": "http://localhost:8123/",
@@ -155,6 +138,23 @@
         "last_used_at": "2026-01-28T14:06:15.978875+00:00",
         "last_used_ip": "172.19.0.1",
         "expire_at": 1777385175.978875,
+        "credential_id": "876d8442b23e4def90979df5c5bb4d8d",
+        "version": "2026.1.2"
+      },
+      {
+        "id": "7afa7cf49d3941e2bb291a752785e047",
+        "user_id": "f9485dc8fc9f428a93c56b81840cbf18",
+        "client_id": "http://localhost:8123/",
+        "client_name": null,
+        "client_icon": null,
+        "token_type": "normal",
+        "created_at": "2026-01-30T11:29:52.038292+00:00",
+        "access_token_expiration": 1800.0,
+        "token": "48f2e7106c38a8fec9fe46138a2f94f7dd80a524268c2e13e517bc56704c71c71372687829220f465d00d7d2aa020d78c9d6a169ec8e71956f7db494265b50dd",
+        "jwt_key": "31e1a0eab1091b8a16fd7b0772e18383771c96b666090dba6ec425a3aaa34d112d7eaf963307f182b7649adab27418498d8d55d8b19753485972b8895bcca206",
+        "last_used_at": "2026-01-30T14:23:22.297090+00:00",
+        "last_used_ip": "172.19.0.1",
+        "expire_at": 1777559002.29709,
         "credential_id": "876d8442b23e4def90979df5c5bb4d8d",
         "version": "2026.1.2"
       }

@@ -4,133 +4,141 @@
   "key": "core.restore_state",
   "data": [
     {
-      "state": {"entity_id":"conversation.home_assistant","state":"unknown","attributes":{"friendly_name":"Home Assistant","supported_features":1},"last_changed":"2026-01-28T11:42:52.780138+00:00","last_reported":"2026-01-28T11:42:52.780138+00:00","last_updated":"2026-01-28T11:42:52.780138+00:00","context":{"id":"01KG26KQBCRYF6SN21AGGYP19K","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"conversation.home_assistant","state":"unknown","attributes":{"friendly_name":"Home Assistant","supported_features":1},"last_changed":"2026-01-30T14:53:12.499993+00:00","last_reported":"2026-01-30T14:53:12.499993+00:00","last_updated":"2026-01-30T14:53:12.499993+00:00","context":{"id":"01KG7P9NDK70X2BNR8QTCJM8EN","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
-      "state": {"entity_id":"event.backup_automatic_backup","state":"unknown","attributes":{"event_types":["completed","failed","in_progress"],"event_type":null,"friendly_name":"Backup Backup automatico"},"last_changed":"2026-01-28T11:42:52.794176+00:00","last_reported":"2026-01-28T11:42:52.794176+00:00","last_updated":"2026-01-28T11:42:52.794176+00:00","context":{"id":"01KG26KQBT7HF5MAD1VRX3XFCN","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"event.backup_automatic_backup","state":"unknown","attributes":{"event_types":["completed","failed","in_progress"],"event_type":null,"friendly_name":"Backup Backup automatico"},"last_changed":"2026-01-30T14:53:12.516598+00:00","last_reported":"2026-01-30T14:53:12.516598+00:00","last_updated":"2026-01-30T14:53:12.516598+00:00","context":{"id":"01KG7P9NE4PQMKDKMTCZAAMY6X","parent_id":null,"user_id":null}},
       "extra_data": {
         "last_event_type": null,
         "last_event_attributes": null
       },
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
-      "state": {"entity_id":"script.chiama_tecnico_caldaia","state":"off","attributes":{"last_triggered":"2026-01-28T12:31:05.266929+00:00","mode":"parallel","current":0,"max":10,"icon":"mdi:face-agent","friendly_name":"Chiama Tecnico Caldaia"},"last_changed":"2026-01-28T12:31:05.267906+00:00","last_reported":"2026-01-28T12:31:05.267906+00:00","last_updated":"2026-01-28T12:31:05.267906+00:00","context":{"id":"01KG29C01JFM0ASHRGE96XH3EV","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"script.chiama_tecnico_caldaia","state":"off","attributes":{"last_triggered":"2026-01-29T10:55:34.484901+00:00","mode":"parallel","current":0,"max":10,"icon":"mdi:face-agent","friendly_name":"Chiama Tecnico Caldaia"},"last_changed":"2026-01-30T14:53:12.999050+00:00","last_reported":"2026-01-30T14:53:12.999050+00:00","last_updated":"2026-01-30T14:53:12.999050+00:00","context":{"id":"01KG7P9NX71TYKR9MDQBJW62DK","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
-      "state": {"entity_id":"script.imposta_setpoint_caldaia","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Imposta setpoint caldaia"},"last_changed":"2026-01-28T11:42:53.082054+00:00","last_reported":"2026-01-28T11:42:53.082054+00:00","last_updated":"2026-01-28T11:42:53.082054+00:00","context":{"id":"01KG26KQMTGREZT7TEVEDQ8K07","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"script.imposta_setpoint_caldaia","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Imposta setpoint caldaia"},"last_changed":"2026-01-30T14:53:12.999292+00:00","last_reported":"2026-01-30T14:53:12.999292+00:00","last_updated":"2026-01-30T14:53:12.999292+00:00","context":{"id":"01KG7P9NX7Q7CGTHKG6WVGQ07E","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
-      "state": {"entity_id":"person.mary","state":"unknown","attributes":{"editable":true,"id":"mary","device_trackers":[],"user_id":"f9485dc8fc9f428a93c56b81840cbf18","friendly_name":"gruppo2"},"last_changed":"2026-01-28T11:42:53.087953+00:00","last_reported":"2026-01-28T11:43:10.574089+00:00","last_updated":"2026-01-28T11:43:10.574089+00:00","context":{"id":"01KG26M8QE80TR9BG8EQGN4Q9M","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"person.mary","state":"unknown","attributes":{"editable":true,"id":"mary","device_trackers":[],"source":"person.mary","user_id":"f9485dc8fc9f428a93c56b81840cbf18","friendly_name":"gruppo2"},"last_changed":"2026-01-30T14:53:13.006413+00:00","last_reported":"2026-01-30T14:53:13.006413+00:00","last_updated":"2026-01-30T14:53:13.006413+00:00","context":{"id":"01KG7P9NXECWQKQQHHNHDCZ4TX","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
-      "state": {"entity_id":"binary_sensor.caldaia_fiamma_reale","state":"off","attributes":{"icon":"mdi:fire","friendly_name":"Caldaia Fiamma"},"last_changed":"2026-01-28T14:13:11.732105+00:00","last_reported":"2026-01-28T14:13:11.732105+00:00","last_updated":"2026-01-28T14:13:11.732105+00:00","context":{"id":"01KG2F6YXKW85B61C8NCXY47DS","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"binary_sensor.caldaia_fiamma_reale","state":"unknown","attributes":{"icon":"mdi:fire","friendly_name":"Caldaia Fiamma"},"last_changed":"2026-01-30T14:53:13.449200+00:00","last_reported":"2026-01-30T14:53:13.449200+00:00","last_updated":"2026-01-30T14:53:13.449200+00:00","context":{"id":"01KG7P9PB9FMFDJ08SJWQWH0S6","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
-      "state": {"entity_id":"automation.gestione_guasto_caldaia_ai","state":"on","attributes":{"id":"gestione_guasto_caldaia_ai","last_triggered":null,"mode":"single","current":0,"friendly_name":"Gestione Guasto Caldaia AI"},"last_changed":"2026-01-28T11:42:54.439240+00:00","last_reported":"2026-01-28T11:42:54.439240+00:00","last_updated":"2026-01-28T11:42:54.439240+00:00","context":{"id":"01KG26KRZ702RBH8N7N4AMYVPN","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"automation.gestione_guasto_caldaia_ai","state":"on","attributes":{"id":"gestione_guasto_caldaia_ai","last_triggered":null,"mode":"single","current":0,"friendly_name":"Gestione Guasto Caldaia AI"},"last_changed":"2026-01-30T14:53:13.705742+00:00","last_reported":"2026-01-30T14:53:13.705742+00:00","last_updated":"2026-01-30T14:53:13.705742+00:00","context":{"id":"01KG7P9PK9WPM52Q19V99SYTE7","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
-      "state": {"entity_id":"automation.comando_vocale_caldaia_diretto","state":"on","attributes":{"id":"1769187794309","last_triggered":"2026-01-28T12:31:05.266670+00:00","mode":"single","current":0,"friendly_name":"Comando Vocale Caldaia (Diretto)"},"last_changed":"2026-01-28T11:42:54.439325+00:00","last_reported":"2026-01-28T12:31:05.268027+00:00","last_updated":"2026-01-28T12:31:05.268027+00:00","context":{"id":"01KG29C01JFM0ASHRGE96XH3EV","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"automation.comando_vocale_caldaia_diretto","state":"on","attributes":{"id":"1769187794309","last_triggered":"2026-01-29T10:55:34.480884+00:00","mode":"single","current":0,"friendly_name":"Comando Vocale Caldaia (Diretto)"},"last_changed":"2026-01-30T14:53:13.705850+00:00","last_reported":"2026-01-30T14:53:13.705850+00:00","last_updated":"2026-01-30T14:53:13.705850+00:00","context":{"id":"01KG7P9PK9929CF4YXNBMPV586","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
-      "state": {"entity_id":"tts.google_translate_en_com","state":"unknown","attributes":{"friendly_name":"Google Translate en com"},"last_changed":"2026-01-28T11:42:54.568509+00:00","last_reported":"2026-01-28T11:42:54.568509+00:00","last_updated":"2026-01-28T11:42:54.568509+00:00","context":{"id":"01KG26KS38EG9ZGP6TG80AHQ4H","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"tts.google_translate_en_com","state":"unknown","attributes":{"friendly_name":"Google Translate en com"},"last_changed":"2026-01-30T14:53:15.349618+00:00","last_reported":"2026-01-30T14:53:15.349618+00:00","last_updated":"2026-01-30T14:53:15.349618+00:00","context":{"id":"01KG7P9R6NEG8A8HKXVW3R30RJ","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
-      "state": {"entity_id":"stt.faster_whisper","state":"unknown","attributes":{"friendly_name":"faster-whisper"},"last_changed":"2026-01-28T11:42:54.645138+00:00","last_reported":"2026-01-28T11:42:54.645138+00:00","last_updated":"2026-01-28T11:42:54.645138+00:00","context":{"id":"01KG26KS5NBSWH7Q6F6DBJEJQV","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"conversation.openai_conversation","state":"2026-01-21T13:51:20.746118+00:00","attributes":{"friendly_name":"OpenAI Conversation","supported_features":1},"last_changed":"2026-01-30T14:53:15.442445+00:00","last_reported":"2026-01-30T14:53:15.442445+00:00","last_updated":"2026-01-30T14:53:15.442445+00:00","context":{"id":"01KG7P9R9J3BXARPMWY1BZSTFQ","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
-      "state": {"entity_id":"tts.piper","state":"2026-01-28T10:50:51.464994+00:00","attributes":{"friendly_name":"piper"},"last_changed":"2026-01-28T11:42:54.648041+00:00","last_reported":"2026-01-28T11:42:54.648041+00:00","last_updated":"2026-01-28T11:42:54.648041+00:00","context":{"id":"01KG26KS5R39JH4C2A385T39BQ","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"stt.faster_whisper","state":"unknown","attributes":{"friendly_name":"faster-whisper"},"last_changed":"2026-01-30T14:53:15.561141+00:00","last_reported":"2026-01-30T14:53:15.561141+00:00","last_updated":"2026-01-30T14:53:15.561141+00:00","context":{"id":"01KG7P9RD91NJS4V8ASADQQVKN","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
-      "state": {"entity_id":"switch.simulazione_rottura_tubo","state":"off","attributes":{"assumed_state":true,"icon":"mdi:wrench","friendly_name":"Simulazione Rottura Tubo"},"last_changed":"2026-01-28T11:42:54.973841+00:00","last_reported":"2026-01-28T11:42:54.973841+00:00","last_updated":"2026-01-28T11:42:54.973841+00:00","context":{"id":"01KG26KSFXTVRWQQJ25VBA59DD","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"tts.piper","state":"2026-01-28T10:50:51.464994+00:00","attributes":{"friendly_name":"piper"},"last_changed":"2026-01-30T14:53:15.565839+00:00","last_reported":"2026-01-30T14:53:15.565839+00:00","last_updated":"2026-01-30T14:53:15.565839+00:00","context":{"id":"01KG7P9RDDTQ6X141B0W4JAQ2P","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
-      "state": {"entity_id":"sensor.caldaia_t_mandata","state":"40.5","attributes":{"unit_of_measurement":"°C","friendly_name":"Temperatura acqua"},"last_changed":"2026-01-28T14:13:29.756286+00:00","last_reported":"2026-01-28T14:13:29.756286+00:00","last_updated":"2026-01-28T14:13:29.756286+00:00","context":{"id":"01KG2F7GGWV14PD4JQ9F1E5JR6","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"sensor.caldaia_t_mandata","state":"37.0","attributes":{"unit_of_measurement":"°C","friendly_name":"Temperatura acqua"},"last_changed":"2026-01-30T14:53:17.687112+00:00","last_reported":"2026-01-30T14:53:17.687112+00:00","last_updated":"2026-01-30T14:53:17.687112+00:00","context":{"id":"01KG7P9TFQZC7CQXB0X25TT5CT","parent_id":null,"user_id":null}},
       "extra_data": {
-        "native_value": "40.5",
+        "native_value": "37.0",
         "native_unit_of_measurement": "°C"
       },
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
-      "state": {"entity_id":"sensor.caldaia_t_ritorno","state":"30.5","attributes":{"unit_of_measurement":"°C","friendly_name":"Caldaia T-Ritorno"},"last_changed":"2026-01-28T14:13:29.756374+00:00","last_reported":"2026-01-28T14:13:29.756374+00:00","last_updated":"2026-01-28T14:13:29.756374+00:00","context":{"id":"01KG2F7GGWW1NW18YBDG5J97EQ","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"sensor.caldaia_t_ritorno","state":"32.0","attributes":{"unit_of_measurement":"°C","friendly_name":"Caldaia T-Ritorno"},"last_changed":"2026-01-30T14:53:17.687141+00:00","last_reported":"2026-01-30T14:53:17.687141+00:00","last_updated":"2026-01-30T14:53:17.687141+00:00","context":{"id":"01KG7P9TFQEX0M3NXVFKQ3C8PS","parent_id":null,"user_id":null}},
       "extra_data": {
-        "native_value": "30.5",
+        "native_value": "32.0",
         "native_unit_of_measurement": "°C"
       },
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
-      "state": {"entity_id":"sensor.caldaia_pressione","state":"1.51","attributes":{"unit_of_measurement":"bar","friendly_name":"Caldaia Pressione"},"last_changed":"2026-01-28T14:13:27.754042+00:00","last_reported":"2026-01-28T14:13:27.754042+00:00","last_updated":"2026-01-28T14:13:27.754042+00:00","context":{"id":"01KG2F7EJA2095G1JCWE5SDZG7","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"sensor.caldaia_pressione","state":"1.5","attributes":{"unit_of_measurement":"bar","friendly_name":"Caldaia Pressione"},"last_changed":"2026-01-30T14:53:17.687072+00:00","last_reported":"2026-01-30T14:53:17.687072+00:00","last_updated":"2026-01-30T14:53:17.687072+00:00","context":{"id":"01KG7P9TFQQ21SM486F5EWGEN1","parent_id":null,"user_id":null}},
       "extra_data": {
-        "native_value": "1.51",
+        "native_value": "1.5",
         "native_unit_of_measurement": "bar"
       },
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
-      "state": {"entity_id":"sensor.caldaia_codice_errore","state":"0","attributes":{"icon":"mdi:alert-circle","friendly_name":"Caldaia Codice Errore"},"last_changed":"2026-01-28T11:42:56.125601+00:00","last_reported":"2026-01-28T11:42:56.125601+00:00","last_updated":"2026-01-28T11:42:56.125601+00:00","context":{"id":"01KG26KTKX7FHA3YKMH48STENJ","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"sensor.caldaia_codice_errore","state":"0","attributes":{"icon":"mdi:alert-circle","friendly_name":"Caldaia Codice Errore"},"last_changed":"2026-01-30T14:53:17.686870+00:00","last_reported":"2026-01-30T14:53:17.686870+00:00","last_updated":"2026-01-30T14:53:17.686870+00:00","context":{"id":"01KG7P9TFPJCB933920CXBQCV6","parent_id":null,"user_id":null}},
       "extra_data": {
         "native_value": "0",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
-      "state": {"entity_id":"sensor.test_raw_status","state":"0","attributes":{"friendly_name":"TEST RAW STATUS"},"last_changed":"2026-01-28T14:13:11.731871+00:00","last_reported":"2026-01-28T14:13:11.731871+00:00","last_updated":"2026-01-28T14:13:11.731871+00:00","context":{"id":"01KG2F6YXKW85B61C8NCXY47DS","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"sensor.test_raw_status","state":"8","attributes":{"friendly_name":"TEST RAW STATUS"},"last_changed":"2026-01-30T14:53:17.687337+00:00","last_reported":"2026-01-30T14:53:17.687337+00:00","last_updated":"2026-01-30T14:53:17.687337+00:00","context":{"id":"01KG7P9TFQMNA419890YF6BSM5","parent_id":null,"user_id":null}},
       "extra_data": {
-        "native_value": "0",
+        "native_value": "8",
         "native_unit_of_measurement": null
       },
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
-      "state": {"entity_id":"number.caldaia_setpoint","state":"40.0","attributes":{"min":30.0,"max":80.0,"step":0.5,"mode":"auto","unit_of_measurement":"°C","friendly_name":"Caldaia Setpoint"},"last_changed":"2026-01-28T13:54:31.162282+00:00","last_reported":"2026-01-28T13:54:31.162282+00:00","last_updated":"2026-01-28T13:54:31.162282+00:00","context":{"id":"01KG2E4RKTTRGKPJ1EV62MFF4V","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"sensor.caldaia_soluzione_tecnica","state":"Sistemi Nominali","attributes":{"icon":"mdi:wrench-clock","friendly_name":"Caldaia Soluzione Tecnica"},"last_changed":"2026-01-30T14:53:17.687268+00:00","last_reported":"2026-01-30T14:53:17.687268+00:00","last_updated":"2026-01-30T14:53:17.687268+00:00","context":{"id":"01KG7P9TFQVH234TZ6MAWVRWKH","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "Sistemi Nominali",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
+    },
+    {
+      "state": {"entity_id":"number.caldaia_setpoint","state":"40.0","attributes":{"min":20.0,"max":80.0,"step":0.5,"mode":"auto","unit_of_measurement":"°C","friendly_name":"Caldaia Setpoint"},"last_changed":"2026-01-30T14:53:17.687013+00:00","last_reported":"2026-01-30T14:53:17.687013+00:00","last_updated":"2026-01-30T14:53:17.687013+00:00","context":{"id":"01KG7P9TFQVRY0CFXZPGYNHF8Y","parent_id":null,"user_id":null}},
       "extra_data": {
         "native_max_value": 80.0,
-        "native_min_value": 30.0,
+        "native_min_value": 20.0,
         "native_step": 0.5,
         "native_unit_of_measurement": "°C",
         "native_value": 40.0
       },
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
-      "state": {"entity_id":"binary_sensor.caldaia_stato_guasto","state":"unknown","attributes":{"device_class":"problem","friendly_name":"Caldaia Stato Guasto"},"last_changed":"2026-01-28T11:42:54.974086+00:00","last_reported":"2026-01-28T11:42:54.974086+00:00","last_updated":"2026-01-28T11:42:54.974086+00:00","context":{"id":"01KG26KSFYNP58KZW7CBY3HXJ2","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"binary_sensor.caldaia_stato_guasto","state":"unknown","attributes":{"device_class":"problem","friendly_name":"Caldaia Stato Guasto"},"last_changed":"2026-01-30T14:53:15.592134+00:00","last_reported":"2026-01-30T14:53:15.592134+00:00","last_updated":"2026-01-30T14:53:15.592134+00:00","context":{"id":"01KG7P9RE8M174WMF8J5EB72S4","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
-      "state": {"entity_id":"conversation.extended_openai_conversation","state":"2026-01-28T11:52:32.356987+00:00","attributes":{"friendly_name":"Gemma Home","supported_features":1},"last_changed":"2026-01-28T11:52:32.357009+00:00","last_reported":"2026-01-28T11:52:32.357009+00:00","last_updated":"2026-01-28T11:52:32.357009+00:00","context":{"id":"01KG275DAW9JK6D2SVN78BFCMN","parent_id":null,"user_id":"f9485dc8fc9f428a93c56b81840cbf18"}},
+      "state": {"entity_id":"switch.simulazione_rottura_tubo","state":"off","attributes":{"assumed_state":true,"icon":"mdi:wrench","friendly_name":"Simulazione Rottura Tubo"},"last_changed":"2026-01-30T14:53:15.592152+00:00","last_reported":"2026-01-30T14:53:15.592152+00:00","last_updated":"2026-01-30T14:53:15.592152+00:00","context":{"id":"01KG7P9RE8N92QNJKF0SE96QW3","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
-      "state": {"entity_id":"conversation.openai_conversation","state":"2026-01-21T13:51:20.746118+00:00","attributes":{"friendly_name":"OpenAI Conversation","supported_features":1},"last_changed":"2026-01-28T11:42:56.652917+00:00","last_reported":"2026-01-28T11:42:56.652917+00:00","last_updated":"2026-01-28T11:42:56.652917+00:00","context":{"id":"01KG26KV4CS9K91GA7A0CKKVNQ","parent_id":null,"user_id":null}},
+      "state": {"entity_id":"conversation.extended_openai_conversation","state":"2026-01-28T11:52:32.356987+00:00","attributes":{"friendly_name":"Gemma Home","supported_features":1},"last_changed":"2026-01-30T14:53:17.959451+00:00","last_reported":"2026-01-30T14:53:17.959451+00:00","last_updated":"2026-01-30T14:53:17.959451+00:00","context":{"id":"01KG7P9TR7561XPQVPWAE0DFRC","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2026-01-28T14:13:30.743449+00:00"
+      "last_seen": "2026-01-30T14:53:17.960192+00:00"
     },
     {
       "state": {"entity_id":"conversation.agente_tecnico","state":"2026-01-28T09:32:31.216011+00:00","attributes":{"friendly_name":"Agente Tecnico","supported_features":1},"last_changed":"2026-01-28T09:32:31.216035+00:00","last_reported":"2026-01-28T09:32:31.216035+00:00","last_updated":"2026-01-28T09:32:31.216035+00:00","context":{"id":"01KG1Z51386D8AP7ZD1NS7TM2F","parent_id":null,"user_id":null}},

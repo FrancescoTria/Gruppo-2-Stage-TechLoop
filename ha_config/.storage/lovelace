@@ -25,6 +25,21 @@
                 "switch.simulazione_rottura_tubo",
                 "sensor.caldaia_codice_errore"
               ]
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "condition": "state",
+                  "entity": "sensor.caldaia_codice_errore",
+                  "state_not": "0"
+                }
+              ],
+              "card": {
+                "type": "markdown",
+                "content": "## ⚠️ Rilevato Guasto!\n**Problema:** {{ states('sensor.caldaia_codice_errore') }}\n### 💡 Soluzione Consigliata: {{ states('sensor.caldaia_soluzione_tecnica') }}\n",
+                "title": "Allarme Caldaia"
+              }
             }
           ],
           "badges": [

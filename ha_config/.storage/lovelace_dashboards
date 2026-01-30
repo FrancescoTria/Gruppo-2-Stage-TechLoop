@@ -12,6 +12,15 @@
         "show_in_sidebar": true,
         "require_admin": false,
         "mode": "storage"
+      },
+      {
+        "id": "manuali_errori",
+        "show_in_sidebar": true,
+        "icon": "mdi:database-alert",
+        "title": "Manuale errori",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "manuali-errori"
       }
     ]
   }

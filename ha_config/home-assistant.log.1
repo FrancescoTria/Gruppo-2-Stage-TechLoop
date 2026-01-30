@@ -1,17 +1,24 @@
-2026-01-28 12:31:06.510 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration extended_openai_conversation which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2026-01-28 12:31:07.374 WARNING (Recorder) [homeassistant.components.recorder.util] The system could not validate that the sqlite3 database at //config/home-assistant_v2.db was shutdown cleanly
-2026-01-28 12:31:07.541 WARNING (Recorder) [homeassistant.components.recorder.util] Ended unfinished session (id=20 from 2026-01-28 10:48:00.140468)
-2026-01-28 12:31:27.060 ERROR (MainThread) [homeassistant.components.script.chiama_tecnico_caldaia] Chiama Tecnico Caldaia: Choose at step 1: choice 1: Error executing script. Invalid data for call_service at pos 1: invalid agent ID for dictionary value @ data['agent_id']
-2026-01-28 12:31:27.061 ERROR (MainThread) [homeassistant.components.script.chiama_tecnico_caldaia] Chiama Tecnico Caldaia: Error executing script. Invalid data for choose at pos 1: invalid agent ID for dictionary value @ data['agent_id']
-2026-01-28 12:31:27.079 ERROR (MainThread) [frontend.js.modern.202601072] Uncaught error from Chrome 144.0.0.0 on Windows 10
-ReferenceError: Cannot access 'a' before initialization
-hassMessageProcesser.processEvent (src/components/ha-assist-chat.ts:461:12)
-callback (node_modules/home-assistant-js-websocket/dist/connection.js:23:33)
-forEach (node_modules/home-assistant-js-websocket/dist/connection.js:15:25)
-2026-01-28 12:31:54.777 ERROR (MainThread) [homeassistant.components.script.chiama_tecnico_caldaia] Chiama Tecnico Caldaia: Choose at step 1: choice 1: Error executing script. Invalid data for call_service at pos 1: invalid agent ID for dictionary value @ data['agent_id']
-2026-01-28 12:31:54.778 ERROR (MainThread) [homeassistant.components.script.chiama_tecnico_caldaia] Chiama Tecnico Caldaia: Error executing script. Invalid data for choose at pos 1: invalid agent ID for dictionary value @ data['agent_id']
-2026-01-28 12:31:54.800 ERROR (MainThread) [frontend.js.modern.202601072] Uncaught error from Chrome 144.0.0.0 on Windows 10
-ReferenceError: Cannot access 'a' before initialization
-hassMessageProcesser.processEvent (src/components/ha-assist-chat.ts:461:12)
-callback (node_modules/home-assistant-js-websocket/dist/connection.js:23:33)
-forEach (node_modules/home-assistant-js-websocket/dist/connection.js:15:25)
+2026-01-30 14:11:06.476 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration extended_openai_conversation which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-01-30 14:11:10.468 ERROR (MainThread) [homeassistant.config_entries] Error setting up entry Assistenza Chat for extended_openai_conversation
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/config_entries.py", line 762, in __async_setup_with_context
+    result = await component.async_setup_entry(hass, self)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/config/custom_components/extended_openai_conversation/__init__.py", line 55, in async_setup_entry
+    client = await get_authenticated_client(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "/config/custom_components/extended_openai_conversation/helpers.py", line 163, in get_authenticated_client
+    partial(client.models.list, timeout=10)
+            ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/functools.py", line 1025, in __get__
+    val = self.func(instance)
+  File "/usr/local/lib/python3.13/site-packages/openai/_client.py", line 574, in models
+    from .resources.models import AsyncModels
+ModuleNotFoundError: No module named 'openai.resources'
+2026-01-30 14:58:43.205 ERROR (MainThread) [frontend.js.modern.202601072] Uncaught error from Chrome 144.0.0.0 on Windows 10
+TypeError: Cannot read properties of undefined (reading 'startFocus')
+_setFocusFirstListItem (src/dialogs/quick-bar/ha-quick-bar.ts:551:44)
+call (node_modules/lit-html/src/lit-html.ts:2109:28)

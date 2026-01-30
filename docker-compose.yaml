@@ -60,7 +60,9 @@ services:
     #         - driver: nvidia
     #           count: 1
     #           capabilities: [gpu]
-    restart: always
+    entrypoint: /bin/bash
+    command: -c "ollama serve & sleep 5 && ollama pull gemma2:2b && wait"
+    restart: unless-stopped
 
   # 5. Matter Server
   matter-server:
@@ -131,11 +133,29 @@ services:
     image: ghcr.io/muchobien/pocketbase:latest
     container_name: pocketbase
     restart: unless-stopped
-    ports:
-      - "8090:8090"
     volumes:
       - ./pb_data:/pb_data
-    command: ["--dir", "/pb_data", "--http", "0.0.0.0:8090"]
+      - ./pb_public:/pb_public
+    command: serve --dir /pb_data --publicDir /pb_public --http 0.0.0.0:8090
+
+  proxy:
+    image: nginx:alpine
+    container_name: pocketbase-proxy
+    ports:
+      - "8090:80" # Il browser punterà ancora alla 8090
+    depends_on:
+      - pocketbase
+    environment:
+      - POCKETBASE_HOST=pocketbase
+    command: >
+      /bin/sh -c "echo 'server { 
+        listen 80; 
+        location / { 
+          proxy_pass http://pocketbase:8090; 
+          proxy_hide_header X-Frame-Options; 
+          add_header X-Frame-Options \"ALLOWALL\"; 
+        } 
+      }' > /etc/nginx/conf.d/default.conf && nginx -g \"daemon off;\""
 
 volumes:
   mosquitto_data:

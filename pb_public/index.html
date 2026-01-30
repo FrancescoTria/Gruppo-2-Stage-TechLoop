@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Errori Caldaia</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pocketbase/0.21.3/pocketbase.umd.min.js"></script>
+</head>
+
+<body>
+
+    <div class="main-container">
+        <header>
+
+            <div class="controls-bar">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-protocol="all">Tutti</button>
+                    <button class="filter-btn" data-protocol="matter">Matter</button>
+                    <button class="filter-btn" data-protocol="opentherm">OpenTherm</button>
+                </div>
+
+                <div class="search-group">
+                    <input type="text" id="search-input" placeholder="Cerca codice o titolo...">
+                </div>
+
+        </header>
+
+        <div id="loading" class="loading">
+            <div class="spinner"></div> Caricamento codici in corso...
+        </div>
+
+        <div id="error-grid" class="grid-container">
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
