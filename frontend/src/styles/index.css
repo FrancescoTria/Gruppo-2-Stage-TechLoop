@@ -1,0 +1,55 @@
+          :root {
+             --colore-primario: #3adca9;
+             --colore-secondario: #0081a7;
+             --colore-terziario: #f07167;
+             --sfondo-page: #f4f2f2;
+             --testo-base: #212121;
+         }
+         
+         * {
+             margin: 0;
+             padding: 0;
+             box-sizing: border-box;
+         }
+         
+         body {
+             font-family: 'Arial', sans-serif;
+             /* Usa un font di base */
+             font-size: 16px;
+             /* Dimensione font predefinita */
+             line-height: 1.5;
+             /* Distanza tra le righe */
+             color: var(--testo-base);
+             /* Colore del testo globale */
+             background-color: var(--sfondo-page);
+             /* Colore di sfondo globale */
+         }
+         
+         a {
+             text-decoration: none;
+             /* Rimuove la sottolineatura */
+             color: var(--colore-primario);
+             /* Colore link principale */
+         }
+         
+         button {
+             background-color: var(--colore-primario);
+             /* Colore di sfondo del bottone */
+             color: #fff;
+             /* Colore del testo del bottone */
+             border: none;
+             /* Rimuove il bordo di default */
+             padding: 10px 20px;
+             /* Spaziatura interna */
+             border-radius: 5px;
+             /* Angoli arrotondati */
+             cursor: pointer;
+             /* Cambia il cursore al passaggio */
+             transition: background-color 0.3s ease;
+             /* Transizione fluida per l'hover */
+         }
+         
+         button:hover {
+             background-color: var(--colore-secondario);
+             /* Colore di sfondo del bottone al passaggio */
+         }
